@@ -28,7 +28,7 @@ public class HotReloadConfiguration {
 				AnnotatedTypeMetadata metadata) {
 			String hotReloadEnabledProperty = context.getEnvironment()
 					.getProperty("hotReload.enabled");
-			return hotReloadEnabledProperty.equals("true");
+			return "true".equals(hotReloadEnabledProperty);
 		}
 	}
 
