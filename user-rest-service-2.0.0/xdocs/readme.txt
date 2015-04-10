@@ -16,5 +16,3 @@ http://localhost:8080/v2/api-docs/
 
 Swagger Version 1.0.2 on Github:
  * https://github.com/springfox/springfox/tree/pre-2.0 
-
-  
