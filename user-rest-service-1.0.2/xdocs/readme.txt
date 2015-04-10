@@ -26,7 +26,7 @@ rem JVM commandline
  -javaagent:C:/tools/spring-loaded/springloaded-1.2.3.RELEASE.jar -noverify
  
  rem + jhipster:
- -DhotReload.enabled=true -DhotReload.watchdir[0]=${project_loc:confess-user-rest-service-swagger}/target/classes -DhotReload.package.project=at.fwd.confess.user
+ -DhotReload.enabled=true -DhotReload.watchdir[0]=${project_loc:confess-user-rest-service-swagger}/target/classes -DhotReload.package.project=at.fwd.swagger.spring.demo.user
  
 =============================
 Spring Actuator
