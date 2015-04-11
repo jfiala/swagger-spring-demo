@@ -74,7 +74,7 @@ public class UserController {
 		location.setCity("San Francisco");
 		location.setCountry("United States");
 		location.setLatitude(new BigDecimal("37.78199"));
-		location.setLongitude(new BigDecimal("-122.40406"));
+		location.setLongitude(new Double(-122.40406));
 		firstUser.getLocations().add(location);
 		
 		userMap.put(firstUser.getId(), firstUser);
