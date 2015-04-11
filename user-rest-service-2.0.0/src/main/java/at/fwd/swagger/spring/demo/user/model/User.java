@@ -24,6 +24,9 @@ public class User {
     @ApiModelProperty(value = "Name of the user", required = true, position = 1)
 	private String name;
     
+    // TODO Swagger-Springfox-2.0.0: Strange behaviour after added @ApiModelProperty to enum attribute
+    // BEFORE: "state":{"type":"string","enum":["ACTIVE","DISABLED"]}
+    // AFTER: "state":{"type":"string","description":"Current state"}
     //@ApiModelProperty(value = "Current state")
     private State state;
     
