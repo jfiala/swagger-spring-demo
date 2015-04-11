@@ -63,7 +63,7 @@ public class UserControllerForCodegenWithTwoGetPaths {
     	}
     }
     
-    // TODO Swagger-Codegen: if two resourcepaths are active, the controller will be ignored (https://github.com/swagger-api/swagger-codegen/issues/613) 
+    // TODO Swagger-Codegen-2 (develop-2): if two resourcepaths are active, the controller will be ignored (https://github.com/swagger-api/swagger-codegen/issues/613) 
 /*
     @RequestMapping(method=RequestMethod.GET, value="/user_get_two_read2")
     @ResponseBody
