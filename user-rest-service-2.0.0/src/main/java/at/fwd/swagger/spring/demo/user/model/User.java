@@ -1,5 +1,8 @@
 package at.fwd.swagger.spring.demo.user.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.wordnik.swagger.annotations.ApiModel;
 import com.wordnik.swagger.annotations.ApiModelProperty;
@@ -24,7 +27,13 @@ public class User {
     @JsonIgnore
 	private String hiddenString;
    
-    private Byte[] bytes;
+    private Byte[] photo;
+    
+    private List<Category> categories;
+    
+    public User() {
+    	categories = new ArrayList<Category>();
+    }
     
 	public long getId() {
 		return id;
@@ -45,17 +54,23 @@ public class User {
 	public void setHiddenString(String hiddenString) {
 		this.hiddenString = hiddenString;
 	}
-	public Byte[] getBytes() {
-		return bytes;
-	}
-	public void setBytes(Byte[] bytes) {
-		this.bytes = bytes;
-	}
 	public State getState() {
 		return state;
 	}
 	public void setState(State state) {
 		this.state = state;
+	}
+	public Byte[] getPhoto() {
+		return photo;
+	}
+	public void setPhoto(Byte[] photo) {
+		this.photo = photo;
+	}
+	public List<Category> getCategories() {
+		return categories;
+	}
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
 	}
 
     

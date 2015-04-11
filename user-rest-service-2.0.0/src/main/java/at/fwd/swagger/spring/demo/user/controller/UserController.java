@@ -1,10 +1,13 @@
 package at.fwd.swagger.spring.demo.user.controller;
 
-import org.apache.log4j.Logger;
-
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
+import javax.annotation.PostConstruct;
+
+import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import at.fwd.swagger.spring.demo.user.exception.ObjectNotFoundException;
+import at.fwd.swagger.spring.demo.user.model.Category;
 import at.fwd.swagger.spring.demo.user.model.State;
 import at.fwd.swagger.spring.demo.user.model.User;
 
@@ -36,14 +40,26 @@ public class UserController {
 	private static final Logger log = Logger.getLogger(UserController.class);
 
 	private ConcurrentMap<Long, User> userMap = new ConcurrentHashMap<Long, User>();
-	
-	public UserController() {
+	 
+	@PostConstruct
+	public void init() {
 		log.debug("setting up usercontroller");
 		User firstUser = new User();
 		firstUser.setName("Test");
 		firstUser.setId(new Long(1));
 		firstUser.setState(State.ACTIVE);
-		firstUser.setBytes(new Byte[] {48, 49});
+		firstUser.setPhoto(new Byte[] {48, 49});
+		
+		Category category = new Category();
+		category.setId(new Long(1));
+		category.setName("Category 1");
+		firstUser.getCategories().add(category);
+		
+		category = new Category();
+		category.setId(new Long(2));
+		category.setName("Category 2");
+		firstUser.getCategories().add(category);
+		
 		userMap.put(firstUser.getId(), firstUser);
 		
 		

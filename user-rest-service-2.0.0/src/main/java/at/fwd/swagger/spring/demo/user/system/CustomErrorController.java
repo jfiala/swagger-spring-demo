@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import springfox.documentation.annotations.ApiIgnore;
 
-@Controller
-@ApiIgnore
+//@Controller
+//@ApiIgnore
 public class CustomErrorController implements ErrorController {
 
 	private static final String PATH = "/error";
