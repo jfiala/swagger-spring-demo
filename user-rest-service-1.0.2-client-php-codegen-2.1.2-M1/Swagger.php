@@ -232,7 +232,11 @@ class APIClient {
       $inner = substr($class, 4, -1);
       $values = array();
       if(strrpos($inner, ",") !== false) {
+<<<<<<< HEAD
         $subClass = explode(',', $inner, 2);
+=======
+        $subClass = explode(',', $inner, 2)[1];
+>>>>>>> 77ccc35f6798d0452523f072a68a8ebacbe3d5a8
         foreach ($data as $key => $value) {
           $values[] = array($key => self::deserialize($value, $subClass));
         }        
