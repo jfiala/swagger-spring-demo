@@ -22,6 +22,7 @@ This uses the stable version 1.0.2 of Swagger-Spring Integration
   Spring Boot Application
  
 * user-rest-service-1.0.2-client-java-codegen-2.1.2-M1:
+<<<<<<< HEAD
   Generated Java code using Swagger-Codegen 
 
 * user-rest-service-1.0.2-client-java-codegen-develop-2.0:
@@ -35,10 +36,26 @@ This uses the stable version 1.0.2 of Swagger-Spring Integration
 
 * user-rest-service-1.0.2-codegen-maven:
   Shows usage of the Swagger Codegen maven integration to generate PHP/Java code
+=======
+Generated Java code using Swagger-Codegen 
+>>>>>>> 1c293390480af58c3ea64dab7289ec6d7a609646
+
+* user-rest-service-1.0.2-client-java-codegen-develop-2.0
+Generated Java code using Swagger-Codegen using latest update 
+
+* user-rest-service-1.0.2-client-php-codegen-2.1.2-M1
+Generated PHP code using Swagger-Codegen 
+
+* user-rest-service-1.0.2-client-php-codegen-develop-2.0
+Generated PHP code using Swagger-Codegen using latest update
+
+* user-rest-service-1.0.2-codegen-maven
+Shows usage of the Swagger Codegen maven integration to generate PHP/Java code
 
 ## user-rest-service-2.0.0 / Swagger 2.0.0 (SNAPSHOT)
 Swagger 2.0.0 is currently under development, will always update to head
 
+<<<<<<< HEAD
 * user-rest-service-2.0.0:
   Spring Boot Application
 
@@ -47,5 +64,15 @@ Swagger 2.0.0 is currently under development, will always update to head
 
 * user-rest-service-2.0.0-client-java-codegen-develop-2.0:
   Generated Java code using Swagger-Codegen using latest update 
+=======
+* user-rest-service-2.0.0
+Spring Boot Application
+
+* user-rest-service-2.0.0-client-java-codegen-2.1.2-M1:
+Generated Java code using Swagger-Codegen 
+
+* user-rest-service-2.0.0-client-java-codegen-develop-2.0
+Generated Java code using Swagger-Codegen using latest update 
+>>>>>>> 1c293390480af58c3ea64dab7289ec6d7a609646
 
 
