@@ -32,15 +32,13 @@ import com.wordnik.swagger.annotations.ApiResponses;
  *
  */
 @RestController
-@Api(value="user-codegen-one-get-path", position=2, description ="User services with one get path")
-public class UserControllerForCodegenWithOneGetPath {
+@Api(value="user-codegen-two-get-path", position=2, description ="User services with two get paths")
+public class UserControllerForCodegenWithTwoGetPaths {
 	/**
 	 * Logger for this class
 	 */
-	private static final Logger log = Logger.getLogger(UserControllerForCodegenWithOneGetPath.class);
+	private static final Logger log = Logger.getLogger(UserControllerForCodegenWithTwoGetPaths.class);
 
-	private static final String PATH_USER = "/user_get_read1";
-	
 	private static final String MESSAGE_NOT_FOUND = "User not found";
 	
 	private static final String MESSAGE_GET_SUCCESS = "Successful retrieval of user detail";
@@ -48,7 +46,7 @@ public class UserControllerForCodegenWithOneGetPath {
 	@Autowired
 	private UserController userController;
 	 
-    @RequestMapping(method=RequestMethod.GET, value=PATH_USER)
+    @RequestMapping(method=RequestMethod.GET, value="/user_get_two_read1")
     @ResponseBody
     @ApiOperation(value="read User by ID", notes="pass ID to read user", position = 2)
     @ApiResponses(value = {
@@ -64,6 +62,25 @@ public class UserControllerForCodegenWithOneGetPath {
     		throw new ObjectNotFoundException(MESSAGE_NOT_FOUND + " (id=" + id + ")");
     	}
     }
+    
+    // TODO Swagger-Codegen: if two resourcepaths are active, the controller will be ignored (https://github.com/swagger-api/swagger-codegen/issues/613) 
+/*
+    @RequestMapping(method=RequestMethod.GET, value="/user_get_two_read2")
+    @ResponseBody
+    @ApiOperation(value="read User by ID", notes="pass ID to read user", position = 2)
+    @ApiResponses(value = {
+    	    @ApiResponse(code = 200, message = MESSAGE_GET_SUCCESS, response = User.class),
+    	    @ApiResponse(code = 404, message = MESSAGE_NOT_FOUND) })
+    public User getUser2(@RequestParam(value="id", required=true) Long id) {
+		log.debug("getUser"); 
+		User user = userController.getUserMap().get(id); 
+		
+    	if (user!=null) {
+    		return user;	
+    	} else {
+    		throw new ObjectNotFoundException(MESSAGE_NOT_FOUND + " (id=" + id + ")");
+    	}
+    }*/
     
     
 }

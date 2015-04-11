@@ -1,7 +1,9 @@
 package at.fwd.swagger.spring.demo.user.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.wordnik.swagger.annotations.ApiModel;
@@ -31,8 +33,14 @@ public class User {
     
     private List<Category> categories;
     
+    private List<Location> locations;
+    
+    private Map<String, Location> locationMap;
+    
     public User() {
     	categories = new ArrayList<Category>();
+    	locations = new ArrayList<Location>();
+    	locationMap = new HashMap<String, Location>();
     }
     
 	public long getId() {
@@ -71,6 +79,23 @@ public class User {
 	}
 	public void setCategories(List<Category> categories) {
 		this.categories = categories;
+	}
+
+
+	public List<Location> getLocations() {
+		return locations;
+	}
+
+	public Map<String, Location> getLocationMap() {
+		return locationMap;
+	}
+
+	public void setLocationMap(Map<String, Location> locationMap) {
+		this.locationMap = locationMap;
+	}
+
+	public void setLocations(List<Location> locations) {
+		this.locations = locations;
 	}
 
     

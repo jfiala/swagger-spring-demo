@@ -48,7 +48,7 @@ public class DefaultApi {
     
 
     // create path and map variables
-    String path = "/user_get1_read".replaceAll("\\{format\\}","json");
+    String path = "/user_get_two_read1".replaceAll("\\{format\\}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -90,25 +90,25 @@ public class DefaultApi {
   }
   
   /**
-   * search for users by name-part
-   * search for users
-   * @param query query
-   * @return List<User>
+   * read User by ID
+   * pass ID to read user
+   * @param id id
+   * @return User
    */
-  public List<User> searchUsers (String query) throws ApiException {
+  public User getUser2 (Long id) throws ApiException {
     Object postBody = null;
     
 
     // create path and map variables
-    String path = "/user_get2_search".replaceAll("\\{format\\}","json");
+    String path = "/user_get_two_read2".replaceAll("\\{format\\}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if (query != null)
-      queryParams.put("query", ApiInvoker.parameterToString(query));
+    if (id != null)
+      queryParams.put("id", ApiInvoker.parameterToString(id));
     
     
     String[] contentTypes = {
@@ -131,7 +131,7 @@ public class DefaultApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (List<User>) ApiInvoker.deserialize(response, "array", User.class);
+        return (User) ApiInvoker.deserialize(response, "", User.class);
       }
       else {
         return null;

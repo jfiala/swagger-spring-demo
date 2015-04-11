@@ -1,5 +1,6 @@
 package at.fwd.swagger.spring.demo.user.controller;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import at.fwd.swagger.spring.demo.user.exception.ObjectNotFoundException;
 import at.fwd.swagger.spring.demo.user.model.Category;
+import at.fwd.swagger.spring.demo.user.model.Location;
 import at.fwd.swagger.spring.demo.user.model.State;
 import at.fwd.swagger.spring.demo.user.model.User;
 
@@ -59,6 +61,16 @@ public class UserController {
 		category.setId(new Long(2));
 		category.setName("Category 2");
 		firstUser.getCategories().add(category);
+		
+
+		Location location = new Location();
+		location.setStreet("1 Howard St");
+		location.setZip("94103");
+		location.setCity("San Francisco");
+		location.setCountry("United States");
+		location.setLatitude(new BigDecimal("37.78199"));
+		location.setLongitude(new BigDecimal("-122.40406"));
+		firstUser.getLocations().add(location);
 		
 		userMap.put(firstUser.getId(), firstUser);
 		

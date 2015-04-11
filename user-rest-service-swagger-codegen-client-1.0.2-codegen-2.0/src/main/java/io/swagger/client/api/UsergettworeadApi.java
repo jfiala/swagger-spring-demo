@@ -7,6 +7,8 @@ import io.swagger.client.model.*;
 
 import java.util.*;
 
+import io.swagger.client.model.User;
+
 
 import com.sun.jersey.multipart.FormDataMultiPart;
 import com.sun.jersey.multipart.file.FileDataBodyPart;
@@ -17,7 +19,8 @@ import java.io.File;
 import java.util.Map;
 import java.util.HashMap;
 
-public class UserwithresponseentityApi {
+
+public class UsergettworeadApi {
   String basePath = "http://localhost/";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
@@ -35,17 +38,17 @@ public class UserwithresponseentityApi {
 
   
   /**
-   * getUserResponseEntity
-   * getUserResponseEntity
+   * read User by ID
+   * pass ID to read user
    * @param id id
-   * @return Object
+   * @return User
    */
-  public Object getUserResponseEntity (Long id) throws ApiException {
+  public User getUser (Long id) throws ApiException {
     Object postBody = null;
     
 
     // create path and map variables
-    String path = "/user_with_responseentity".replaceAll("\\{format\\}","json");
+    String path = "/user_get_two_read1".replaceAll("\\{format\\}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -76,7 +79,7 @@ public class UserwithresponseentityApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (Object) ApiInvoker.deserialize(response, "", Object.class);
+        return (User) ApiInvoker.deserialize(response, "", User.class);
       }
       else {
         return null;
@@ -87,3 +90,4 @@ public class UserwithresponseentityApi {
   }
   
 }
+

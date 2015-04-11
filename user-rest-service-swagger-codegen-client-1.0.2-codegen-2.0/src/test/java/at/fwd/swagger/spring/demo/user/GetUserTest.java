@@ -24,6 +24,15 @@ public class GetUserTest extends TestCase {
 			User user = api.getUser(new Long(1));
 			assertNotNull(user);
 			log.info("user: " + user.toString());
+
+			assertEquals("Test", user.getName());
+			
+			//assertEquals(User.StateEnum.ACTIVE, user.getState());
+			
+			assertEquals(2, user.getCategories().size());
+			assertEquals("Category 1", user.getCategories().get(0).getName());
+			assertEquals("Category 2", user.getCategories().get(1).getName());
+
 			
 			
 		} catch (ApiException e) {

@@ -1,6 +1,8 @@
 package io.swagger.client.model;
 
 import io.swagger.client.model.User;
+import io.swagger.client.model.Category;
+import io.swagger.client.model.Location;
 import java.util.*;
 
 
@@ -18,7 +20,9 @@ public class User  {
   private Long id = null;
   private String name = null;
   private User state = null;
-  private List<String> bytes = new ArrayList<String>() ;
+  private List<String> photo = new ArrayList<String>() ;
+  private List<Category> categories = new ArrayList<Category>() ;
+  private List<Location> locations = new ArrayList<Location>() ;
 
   
   /**
@@ -62,12 +66,36 @@ public class User  {
   /**
    **/
   @ApiModelProperty(value = "")
-  @JsonProperty("bytes")
-  public List<String> getBytes() {
-    return bytes;
+  @JsonProperty("photo")
+  public List<String> getPhoto() {
+    return photo;
   }
-  public void setBytes(List<String> bytes) {
-    this.bytes = bytes;
+  public void setPhoto(List<String> photo) {
+    this.photo = photo;
+  }
+
+  
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  @JsonProperty("categories")
+  public List<Category> getCategories() {
+    return categories;
+  }
+  public void setCategories(List<Category> categories) {
+    this.categories = categories;
+  }
+
+  
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  @JsonProperty("locations")
+  public List<Location> getLocations() {
+    return locations;
+  }
+  public void setLocations(List<Location> locations) {
+    this.locations = locations;
   }
 
   
@@ -80,7 +108,9 @@ public class User  {
     sb.append("  id: ").append(id).append("\n");
     sb.append("  name: ").append(name).append("\n");
     sb.append("  state: ").append(state).append("\n");
-    sb.append("  bytes: ").append(bytes).append("\n");
+    sb.append("  photo: ").append(photo).append("\n");
+    sb.append("  categories: ").append(categories).append("\n");
+    sb.append("  locations: ").append(locations).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

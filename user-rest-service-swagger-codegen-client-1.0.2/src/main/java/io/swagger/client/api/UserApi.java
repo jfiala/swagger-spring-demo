@@ -10,6 +10,7 @@ import java.util.*;
 import io.swagger.client.model.User;
 
 import com.sun.jersey.multipart.FormDataMultiPart;
+import com.sun.jersey.multipart.file.FileDataBodyPart;
 
 import javax.ws.rs.core.MediaType;
 
@@ -18,7 +19,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class UserApi {
-  String basePath = "http://null/";
+  String basePath = "http://localhost/";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
   public ApiInvoker getInvoker() {
@@ -34,7 +35,12 @@ public class UserApi {
   }
 
   
-    
+  /**
+   * read User by ID
+   * pass ID to read user
+   * @param id id
+   * @return User
+   */
   public User getUser (Long id) throws ApiException {
     Object postBody = null;
     
@@ -47,12 +53,12 @@ public class UserApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if(!"null".equals(String.valueOf(id)))
-      queryParams.put("id", String.valueOf(id));
+    if (id != null)
+      queryParams.put("id", ApiInvoker.parameterToString(id));
     
     
     String[] contentTypes = {
-      "application/json"
+      "application/json",
     };
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -77,16 +83,17 @@ public class UserApi {
         return null;
       }
     } catch (ApiException ex) {
-      if(ex.getCode() == 404) {
-      	return  null;
-      }
-      else {
-        throw ex;
-      }
+      throw ex;
     }
   }
   
-    
+  /**
+   * create or update a user name by id
+   * saveUser
+   * @param id id
+   * @param name name
+   * @return User
+   */
   public User saveUser (Long id, String name) throws ApiException {
     Object postBody = null;
     
@@ -99,14 +106,14 @@ public class UserApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if(!"null".equals(String.valueOf(id)))
-      queryParams.put("id", String.valueOf(id));
-    if(!"null".equals(String.valueOf(name)))
-      queryParams.put("name", String.valueOf(name));
+    if (id != null)
+      queryParams.put("id", ApiInvoker.parameterToString(id));
+    if (name != null)
+      queryParams.put("name", ApiInvoker.parameterToString(name));
     
     
     String[] contentTypes = {
-      "application/json"
+      "application/json",
     };
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -131,12 +138,7 @@ public class UserApi {
         return null;
       }
     } catch (ApiException ex) {
-      if(ex.getCode() == 404) {
-      	return  null;
-      }
-      else {
-        throw ex;
-      }
+      throw ex;
     }
   }
   

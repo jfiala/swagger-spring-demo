@@ -48,7 +48,7 @@ public class UsergetreadApi {
     
 
     // create path and map variables
-    String path = "/user_get3_read".replaceAll("\\{format\\}","json");
+    String path = "/user_get_read1".replaceAll("\\{format\\}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
