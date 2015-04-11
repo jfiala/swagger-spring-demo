@@ -1,7 +1,6 @@
 <?php
 require_once("Swagger.php");
 require_once("UserApi.php");
-require_once("SearchApi.php");
 require_once("models/User.php");
 
 $apiServer = "http://localhost:8080";
