@@ -170,6 +170,12 @@
 	      <id>jcenter-snapshots</id>
 	      <name>jcenter</name>
 	      <url>http://oss.jfrog.org/artifactory/oss-snapshot-local/</url>
+	      <snapshots>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+          <releases>
+            <updatePolicy>always</updatePolicy>
+          </releases>
 	    </repository>
     </repositories>
     <pluginRepositories>
