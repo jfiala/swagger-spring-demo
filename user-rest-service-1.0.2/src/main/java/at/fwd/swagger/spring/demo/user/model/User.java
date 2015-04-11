@@ -31,8 +31,10 @@ public class User {
 	private String hiddenString;
 
     // TODO Swagger-Codegen-2.0.13: causes error with swagger-codegen-2.0.13: reserved word "byte" not allowed
+    @ApiModelProperty(notes="demo for java.lang.Byte[]")
     private Byte[] photo;
     
+    @ApiModelProperty(notes="demo for java.util.List")
     private List<Category> categories;
     
     private List<Location> locations;

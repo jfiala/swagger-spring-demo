@@ -2,6 +2,8 @@ package at.fwd.swagger.spring.demo.user.model;
 
 import java.math.BigDecimal;
 
+import com.wordnik.swagger.annotations.ApiModelProperty;
+
 /**
  * Location object (shows BigDecimal)
  * 
@@ -18,9 +20,11 @@ public class Location {
 	
 	String country;
 	
+	@ApiModelProperty(notes="demo for java.math.BigDecimal")
 	BigDecimal latitude;
 	
-	BigDecimal longitude;
+	@ApiModelProperty(notes="demo for java.lang.Double")
+	Double longitude;
 
 	public String getStreet() {
 		return street;
@@ -62,13 +66,14 @@ public class Location {
 		this.latitude = latitude;
 	}
 
-	public BigDecimal getLongitude() {
+	public Double getLongitude() {
 		return longitude;
 	}
 
-	public void setLongitude(BigDecimal longitude) {
+	public void setLongitude(Double longitude) {
 		this.longitude = longitude;
 	}
+
 	
 	
 	

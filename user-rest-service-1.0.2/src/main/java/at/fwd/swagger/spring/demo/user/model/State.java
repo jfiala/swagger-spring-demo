@@ -3,7 +3,7 @@ package at.fwd.swagger.spring.demo.user.model;
 import com.wordnik.swagger.annotations.ApiModel;
 
 /**
- * state to demo enum
+ * Demo for enum State
  * 
  * @author johannes.fiala@fwd.at
  *
