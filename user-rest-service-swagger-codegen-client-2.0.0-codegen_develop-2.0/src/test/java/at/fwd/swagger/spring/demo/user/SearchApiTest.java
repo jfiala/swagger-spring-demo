@@ -17,18 +17,14 @@ public class SearchApiTest extends TestCase {
 			SearchservicesApi api = new SearchservicesApi();
 			api.setBasePath("http://localhost:8080/");
 			
-			System.out.println("basepath: " + api.getBasePath());
-			
 			List<User> users = api.searchUsersUsingGET("T");
 			System.out.println ("response: " + users.toString());
+			
+			assertTrue(users.size()>0);
 			
 			for (User user : users) {
 				System.out.println ("user: " + user.toString());	
 			}
-			
-//			
-//			User user = (User)response.getBody();
-//			System.out.println ("user: " + user.toString());
 			
 			
 		} catch (Exception e) {
