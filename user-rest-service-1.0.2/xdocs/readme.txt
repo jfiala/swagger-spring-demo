@@ -22,11 +22,11 @@ Swagger Version 1.0.2 on Github:
 =============================
 Use with Spring Loaded:
 =============================
-rem JVM commandline 
- -javaagent:C:/tools/spring-loaded/springloaded-1.2.3.RELEASE.jar -noverify
+rem JVM commandline: Spring loaded + JHipster
+ -javaagent:C:/tools/spring-loaded/springloaded-1.2.3.RELEASE.jar -noverify-DhotReload.enabled=true 
  
- rem + jhipster:
- -DhotReload.enabled=true -DhotReload.watchdir[0]=${project_loc:confess-user-rest-service-swagger}/target/classes -DhotReload.package.project=at.fwd.swagger.spring.demo.user
+ rem jhipster weitere properties:
+ rem -DhotReload.watchdir[0]=${project_loc:confess-user-rest-service-swagger}/target/classes -DhotReload.package.project=at.fwd.swagger.spring.demo.user
  
 =============================
 Spring Actuator

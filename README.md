@@ -52,4 +52,20 @@ Swagger 2.0.0 is currently under development, will always update to head
 *   user-rest-service-2.0.0-client-java-codegen-develop-2.0:
     Generated Java code using Swagger-Codegen using latest update 
 
+## Hot deployment
+
+* Hot deployment using Spring-Loaded + JHipster-Core:
+-javaagent:C:/tools/spring-loaded/springloaded-1.2.3.RELEASE.jar -noverify-DhotReload.enabled=true
+
+JHipster activation: HotReloadConfiguration.java
+* sets target package
+* default watchdir target/classes should be fine
+
+* Refresh Swagger API changes (working for method-level refresh):
+http://localhost:8080/refresh (SpringSwaggerController)
+
+The Refresh of the Swagger API changes is currently only provided for 1.0.2!
+
+
+
 
