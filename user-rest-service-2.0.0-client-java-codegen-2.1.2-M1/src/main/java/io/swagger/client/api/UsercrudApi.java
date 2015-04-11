@@ -10,7 +10,6 @@ import java.util.*;
 import io.swagger.client.model.User;
 
 import com.sun.jersey.multipart.FormDataMultiPart;
-import com.sun.jersey.multipart.file.FileDataBodyPart;
 
 import javax.ws.rs.core.MediaType;
 
@@ -35,12 +34,7 @@ public class UsercrudApi {
   }
 
   
-  /**
-   * read User by ID
-   * pass ID to read user
-   * @param id id
-   * @return User
-   */
+    
   public User getUserUsingGET (Long id) throws ApiException {
     Object postBody = null;
     
@@ -53,12 +47,12 @@ public class UsercrudApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if (id != null)
-      queryParams.put("id", ApiInvoker.parameterToString(id));
+    if(!"null".equals(String.valueOf(id)))
+      queryParams.put("id", String.valueOf(id));
     
     
     String[] contentTypes = {
-      "application/json",
+      "application/json"
     };
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -83,17 +77,16 @@ public class UsercrudApi {
         return null;
       }
     } catch (ApiException ex) {
-      throw ex;
+      if(ex.getCode() == 404) {
+      	return  null;
+      }
+      else {
+        throw ex;
+      }
     }
   }
   
-  /**
-   * create or update a user name by id
-   * saveUser
-   * @param id id
-   * @param name name
-   * @return User
-   */
+    
   public User saveUserUsingPOST (Long id, String name) throws ApiException {
     Object postBody = null;
     
@@ -106,14 +99,14 @@ public class UsercrudApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if (id != null)
-      queryParams.put("id", ApiInvoker.parameterToString(id));
-    if (name != null)
-      queryParams.put("name", ApiInvoker.parameterToString(name));
+    if(!"null".equals(String.valueOf(id)))
+      queryParams.put("id", String.valueOf(id));
+    if(!"null".equals(String.valueOf(name)))
+      queryParams.put("name", String.valueOf(name));
     
     
     String[] contentTypes = {
-      "application/json",
+      "application/json"
     };
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -138,7 +131,12 @@ public class UsercrudApi {
         return null;
       }
     } catch (ApiException ex) {
-      throw ex;
+      if(ex.getCode() == 404) {
+      	return  null;
+      }
+      else {
+        throw ex;
+      }
     }
   }
   

@@ -10,7 +10,6 @@ import java.util.*;
 import io.swagger.client.model.User;
 
 import com.sun.jersey.multipart.FormDataMultiPart;
-import com.sun.jersey.multipart.file.FileDataBodyPart;
 
 import javax.ws.rs.core.MediaType;
 
@@ -35,12 +34,7 @@ public class SearchservicesApi {
   }
 
   
-  /**
-   * search for users by name-part
-   * search for users
-   * @param query query
-   * @return List<User>
-   */
+    
   public List<User> searchUsersUsingGET (String query) throws ApiException {
     Object postBody = null;
     
@@ -53,12 +47,12 @@ public class SearchservicesApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if (query != null)
-      queryParams.put("query", ApiInvoker.parameterToString(query));
+    if(!"null".equals(String.valueOf(query)))
+      queryParams.put("query", String.valueOf(query));
     
     
     String[] contentTypes = {
-      "application/json",
+      "application/json"
     };
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -83,7 +77,12 @@ public class SearchservicesApi {
         return null;
       }
     } catch (ApiException ex) {
-      throw ex;
+      if(ex.getCode() == 404) {
+      	return  null;
+      }
+      else {
+        throw ex;
+      }
     }
   }
   

@@ -14,7 +14,7 @@ public class Category  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("id")
   public Long getId() {
     return id;
@@ -26,7 +26,7 @@ public class Category  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("name")
   public String getName() {
     return name;

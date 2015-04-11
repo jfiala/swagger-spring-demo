@@ -29,7 +29,7 @@ public class User  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("categories")
   public List<Category> getCategories() {
     return categories;
@@ -54,7 +54,7 @@ public class User  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("locationMap")
   public Map<String, Location> getLocationMap() {
     return locationMap;
@@ -66,7 +66,7 @@ public class User  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("locations")
   public List<Location> getLocations() {
     return locations;
@@ -91,7 +91,7 @@ public class User  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("photo")
   public List<String> getPhoto() {
     return photo;
@@ -103,7 +103,7 @@ public class User  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;

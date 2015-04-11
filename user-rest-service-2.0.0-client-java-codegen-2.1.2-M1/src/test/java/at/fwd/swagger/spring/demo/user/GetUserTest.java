@@ -42,11 +42,13 @@ public class GetUserTest extends TestCase {
 			
 			System.out.println("basepath: " + api.getBasePath());
 			
-			api.getUserUsingGET(new Long(2));
-			fail("should fail");
+			User user = api.getUserUsingGET(new Long(2));
+			assertNull(user);
+			
 			
 		} catch (ApiException e) {
-			assertEquals(404, e.getCode());
+			e.printStackTrace();
+			fail(e.getMessage());
 		}
 		
 	}

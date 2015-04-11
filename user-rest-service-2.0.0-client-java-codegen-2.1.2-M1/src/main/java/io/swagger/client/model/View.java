@@ -13,7 +13,7 @@ public class View  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("contentType")
   public String getContentType() {
     return contentType;

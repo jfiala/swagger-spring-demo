@@ -9,7 +9,6 @@ import java.util.*;
 
 
 import com.sun.jersey.multipart.FormDataMultiPart;
-import com.sun.jersey.multipart.file.FileDataBodyPart;
 
 import javax.ws.rs.core.MediaType;
 
@@ -34,12 +33,7 @@ public class UsercrudresponseentityApi {
   }
 
   
-  /**
-   * getUserResponseEntity
-   * getUserResponseEntity
-   * @param id id
-   * @return Object
-   */
+    
   public Object getUserResponseEntityUsingGET (Long id) throws ApiException {
     Object postBody = null;
     
@@ -52,12 +46,12 @@ public class UsercrudresponseentityApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if (id != null)
-      queryParams.put("id", ApiInvoker.parameterToString(id));
+    if(!"null".equals(String.valueOf(id)))
+      queryParams.put("id", String.valueOf(id));
     
     
     String[] contentTypes = {
-      "application/json",
+      "application/json"
     };
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -82,7 +76,12 @@ public class UsercrudresponseentityApi {
         return null;
       }
     } catch (ApiException ex) {
-      throw ex;
+      if(ex.getCode() == 404) {
+      	return  null;
+      }
+      else {
+        throw ex;
+      }
     }
   }
   

@@ -21,7 +21,7 @@ public class ModelAndView  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("empty")
   public Boolean getEmpty() {
     return empty;
@@ -33,7 +33,7 @@ public class ModelAndView  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("model")
   public Object getModel() {
     return model;
@@ -45,7 +45,7 @@ public class ModelAndView  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("modelMap")
   public Map<String, Object> getModelMap() {
     return modelMap;
@@ -57,7 +57,7 @@ public class ModelAndView  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("reference")
   public Boolean getReference() {
     return reference;
@@ -69,7 +69,7 @@ public class ModelAndView  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("view")
   public View getView() {
     return view;
@@ -81,7 +81,7 @@ public class ModelAndView  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("viewName")
   public String getViewName() {
     return viewName;
