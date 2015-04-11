@@ -1,4 +1,4 @@
-package at.fwd.confess.user;
+package at.fwd.swagger.spring.demo.user;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;

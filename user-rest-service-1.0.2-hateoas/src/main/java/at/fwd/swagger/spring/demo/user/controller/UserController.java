@@ -1,4 +1,4 @@
-package at.fwd.confess.user.controller;
+package at.fwd.swagger.spring.demo.user.controller;
 
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import at.fwd.confess.user.exception.ObjectNotFoundException;
-import at.fwd.confess.user.model.User;
+import at.fwd.swagger.spring.demo.user.exception.ObjectNotFoundException;
+import at.fwd.swagger.spring.demo.user.model.User;
 
 
 @RestController
