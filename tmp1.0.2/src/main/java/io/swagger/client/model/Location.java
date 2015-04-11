@@ -7,15 +7,42 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 
+/**
+ * 
+ **/
 @ApiModel(description = "")
 public class Location  {
   
+  private String street = null;
+  private String zip = null;
   private String city = null;
   private String country = null;
   private Double latitude = null;
   private Double longitude = null;
-  private String street = null;
-  private String zip = null;
+
+  
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  @JsonProperty("street")
+  public String getStreet() {
+    return street;
+  }
+  public void setStreet(String street) {
+    this.street = street;
+  }
+
+  
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  @JsonProperty("zip")
+  public String getZip() {
+    return zip;
+  }
+  public void setZip(String zip) {
+    this.zip = zip;
+  }
 
   
   /**
@@ -66,42 +93,18 @@ public class Location  {
   }
 
   
-  /**
-   **/
-  @ApiModelProperty(value = "")
-  @JsonProperty("street")
-  public String getStreet() {
-    return street;
-  }
-  public void setStreet(String street) {
-    this.street = street;
-  }
-
-  
-  /**
-   **/
-  @ApiModelProperty(value = "")
-  @JsonProperty("zip")
-  public String getZip() {
-    return zip;
-  }
-  public void setZip(String zip) {
-    this.zip = zip;
-  }
-
-  
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class Location {\n");
     
+    sb.append("  street: ").append(street).append("\n");
+    sb.append("  zip: ").append(zip).append("\n");
     sb.append("  city: ").append(city).append("\n");
     sb.append("  country: ").append(country).append("\n");
     sb.append("  latitude: ").append(latitude).append("\n");
     sb.append("  longitude: ").append(longitude).append("\n");
-    sb.append("  street: ").append(street).append("\n");
-    sb.append("  zip: ").append(zip).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
