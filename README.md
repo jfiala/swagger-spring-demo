@@ -36,6 +36,7 @@ This uses the stable version 1.0.2 of Swagger-Spring Integration
 * user-rest-service-1.0.2-codegen-maven:
   Shows usage of the Swagger Codegen maven integration to generate PHP/Java code
 
+
 ## user-rest-service-2.0.0 / Swagger 2.0.0 (SNAPSHOT)
 Swagger 2.0.0 is currently under development, will always update to head
 
@@ -47,5 +48,6 @@ Swagger 2.0.0 is currently under development, will always update to head
 
 * user-rest-service-2.0.0-client-java-codegen-develop-2.0:
   Generated Java code using Swagger-Codegen using latest update 
+
 
 
