@@ -30,8 +30,8 @@ public class User {
     @JsonIgnore
 	private String hiddenString;
 
-    // causes error with swagger-codegen-2.0.13: reserved word "byte" not allowed
-    //private Byte[] photo;
+    // TODO Swagger-Codegen-2.0.13: causes error with swagger-codegen-2.0.13: reserved word "byte" not allowed
+    private Byte[] photo;
     
     private List<Category> categories;
     
@@ -78,14 +78,14 @@ public class User {
 	public void setHiddenString(String hiddenString) {
 		this.hiddenString = hiddenString;
 	}
-/*
+
 	public Byte[] getPhoto() {
 		return photo;
 	}
 
 	public void setPhoto(Byte[] photo) {
 		this.photo = photo;
-	}*/
+	}
 
 	public List<Category> getCategories() {
 		return categories;
