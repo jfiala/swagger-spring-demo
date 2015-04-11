@@ -21,7 +21,7 @@ public class Location  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("street")
   public String getStreet() {
     return street;
@@ -33,7 +33,7 @@ public class Location  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("zip")
   public String getZip() {
     return zip;
@@ -45,7 +45,7 @@ public class Location  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("city")
   public String getCity() {
     return city;
@@ -57,7 +57,7 @@ public class Location  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("country")
   public String getCountry() {
     return country;
@@ -69,7 +69,7 @@ public class Location  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("latitude")
   public Double getLatitude() {
     return latitude;
@@ -81,7 +81,7 @@ public class Location  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("longitude")
   public Double getLongitude() {
     return longitude;

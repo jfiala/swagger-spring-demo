@@ -1,9 +1,7 @@
 package at.fwd.swagger.spring.demo.user.model;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.wordnik.swagger.annotations.ApiModel;
@@ -24,12 +22,16 @@ public class User {
     @ApiModelProperty(value = "Name of the user", required = true, position = 1)
 	private String name;
     
+    // TODO Swagger-Codegen-2 (develop-2.0 + 2.1.2-M2 + 2.1.2-M1) with Swagger-1.2: Enum seems not yet supported
+    @ApiModelProperty(value = "State", required = false, position = 3)
+    @JsonIgnore
     private State state;
-    
+        
     @JsonIgnore
 	private String hiddenString;
 
-    private Byte[] photo;
+    // causes error with swagger-codegen-2.0.13: reserved word "byte" not allowed
+    //private Byte[] photo;
     
     private List<Category> categories;
     
@@ -76,14 +78,14 @@ public class User {
 	public void setHiddenString(String hiddenString) {
 		this.hiddenString = hiddenString;
 	}
-
+/*
 	public Byte[] getPhoto() {
 		return photo;
 	}
 
 	public void setPhoto(Byte[] photo) {
 		this.photo = photo;
-	}
+	}*/
 
 	public List<Category> getCategories() {
 		return categories;

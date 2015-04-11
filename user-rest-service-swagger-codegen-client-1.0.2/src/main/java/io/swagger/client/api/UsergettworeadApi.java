@@ -17,7 +17,7 @@ import java.io.File;
 import java.util.Map;
 import java.util.HashMap;
 
-public class UsergetreadApi {
+public class UsergettworeadApi {
   String basePath = "http://null/";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
@@ -40,7 +40,7 @@ public class UsergetreadApi {
     
 
     // create path and map variables
-    String path = "/user_get_read1".replaceAll("\\{format\\}","json");
+    String path = "/user_get_two_read1".replaceAll("\\{format\\}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();

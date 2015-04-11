@@ -4,8 +4,10 @@ import io.swagger.client.model.Category;
 import io.swagger.client.model.Location;
 import java.util.*;
 
+
 import com.wordnik.swagger.annotations.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 
 /**
@@ -23,7 +25,7 @@ public class User  {
   /**
    * ID of the user
    **/
-  @ApiModelProperty(required = false, value = "ID of the user")
+  @ApiModelProperty(value = "ID of the user")
   @JsonProperty("id")
   public Long getId() {
     return id;
@@ -36,7 +38,7 @@ public class User  {
   /**
    * Name of the user
    **/
-  @ApiModelProperty(required = false, value = "Name of the user")
+  @ApiModelProperty(value = "Name of the user")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -48,7 +50,7 @@ public class User  {
   
   /**
    **/
-  @ApiModelProperty(required = false, value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("categories")
   public List<Category> getCategories() {
     return categories;
@@ -60,7 +62,7 @@ public class User  {
   
   /**
    **/
-  @ApiModelProperty(required = false, value = "")
+  @ApiModelProperty(value = "")
   @JsonProperty("locations")
   public List<Location> getLocations() {
     return locations;
@@ -84,3 +86,5 @@ public class User  {
     return sb.toString();
   }
 }
+
+
