@@ -1,6 +1,12 @@
 
 ## user-rest-service-1.0.2 / Swagger 1.2
-This uses the stable version 1.0.2 of Swagger-Spring Integration
+This demo uses the stable version 1.0.2 of Swagger-Spring Integration
+
+### IDE
+Currently maven configuration files are supplied for all projects.
+
+* Run Spring Boot Application: mvn spring-boot:run
+* Generate Eclipse configuration: mvn eclipse:eclipse
 
 Features of Model-Classes
 ---------------------------------------
