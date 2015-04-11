@@ -33,12 +33,15 @@ public class User {
     @JsonIgnore
 	private String hiddenString;
    
+    @ApiModelProperty(notes="demo for java.lang.Byte[]")
     private Byte[] photo;
     
+    @ApiModelProperty(notes="demo for java.util.List")
     private List<Category> categories;
     
     private List<Location> locations;
     
+    @ApiModelProperty(notes="demo for java.util.Map")
     private Map<String, Location> locationMap;
     
     public User() {

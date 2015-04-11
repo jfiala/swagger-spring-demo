@@ -1,7 +1,7 @@
 package at.fwd.swagger.spring.demo.user.model;
 
 /**
- * state to demo enum
+ * Demo for enum State
  * 
  * @author johannes.fiala@fwd.at
  *
