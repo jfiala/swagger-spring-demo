@@ -1,4 +1,4 @@
-package at.fwd.confess.user.exception;
+package at.fwd.swagger.spring.demo.user.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

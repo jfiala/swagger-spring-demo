@@ -1,4 +1,4 @@
-package at.fwd.confess.user.controller;
+package at.fwd.swagger.spring.demo.user.controller;
 
 import java.util.HashMap;
 import java.util.Map;

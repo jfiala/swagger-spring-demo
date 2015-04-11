@@ -1,4 +1,4 @@
-package at.fwd.confess.user;
+package at.fwd.swagger.spring.demo.user;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

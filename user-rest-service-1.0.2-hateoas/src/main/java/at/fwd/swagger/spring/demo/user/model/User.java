@@ -1,4 +1,4 @@
-package at.fwd.confess.user.model;
+package at.fwd.swagger.spring.demo.user.model;
 
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.ResourceSupport;

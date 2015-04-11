@@ -38,7 +38,7 @@
     </dependencies>
 
     <properties>
-        <start-class>at.fwd.confess.user.Application</start-class>
+        <start-class>at.fwd.swagger.spring.demo.user.Application</start-class>
     </properties>
 
     <build>
