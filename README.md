@@ -9,6 +9,9 @@ https://github.com/springfox/springfox
 * Swagger-Codegen:
 https://github.com/swagger-api/swagger-codegen
 
+## Open issues
+for open issues regarding springfox/swagger-codegen see TODO Task list
+
 ## IDE
 Currently maven configuration files are supplied for all projects.
 

@@ -22,7 +22,7 @@ public class User {
     @ApiModelProperty(value = "Name of the user", required = true, position = 1)
 	private String name;
     
-    // TODO Swagger-Codegen-2 (develop-2.0 + 2.1.2-M2 + 2.1.2-M1) with Swagger-1.2: Enum seems not yet supported (https://github.com/swagger-api/swagger-codegen/issues/621)
+    // TODO Swagger-Springfox (develop-2.0 + 2.1.2-M2 + 2.1.2-M1) with Swagger-1.2: Enum seems not yet supported (https://github.com/springfox/springfox/issues/668)
     @ApiModelProperty(value = "State", required = false, position = 3)
     @JsonIgnore
     private State state;

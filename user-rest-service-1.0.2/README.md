@@ -5,17 +5,20 @@ This uses the stable version 1.0.2 of Swagger-Spring Integration
 Features of Model-Classes
 ---------------------------------------
 * enum (user.state)
+* java.lang.Byte[] (user.photo)
+* java.lang.Double (user.longitude)
 * java.util.List (user.category, user.ocation)
-* Byte[] (user.photo)
-* java.math.BigDecimal (location.langitude/longitude)
+* java.math.BigDecimal (location.langitude)
 
 Features of Controller-Classes
 ---------------------------------------
-* HTTP GET/POST
-* Handling Error-codes using Exceptions
-* Handling Error-codes using ResponseEntity
-(* Multiple Paths for the same HTTP verb (e.g. GET))
->>> currently causing errors during CodeGen
+* HTTP GET/POST (UserController)
+* Handling Error-codes using Exceptions (UserController)
+* Handling Error-codes using ResponseEntity (UserControllerResponseEntity)
+* Multiple Paths for the same HTTP verb (UserControllerForCodegenWithTwoGetPaths)
+>>> currently commented second verb because of errors during CodeGen
+
+
 
 
 

@@ -28,6 +28,8 @@ namespace SwaggerPetstore\models;
 
 use \ArrayAccess;
 
+// TODO Swagger-Codegen: double causes fatal error (https://github.com/swagger-api/swagger-codegen/issues/622)
+
 class Location implements ArrayAccess {
   static $swaggerTypes = array(
       'street' => 'string',
