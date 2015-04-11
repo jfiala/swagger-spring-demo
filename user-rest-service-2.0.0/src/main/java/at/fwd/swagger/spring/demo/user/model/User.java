@@ -24,6 +24,7 @@ public class User {
     @ApiModelProperty(value = "Name of the user", required = true, position = 1)
 	private String name;
     
+    //@ApiModelProperty(value = "Current state")
     private State state;
     
     @JsonIgnore

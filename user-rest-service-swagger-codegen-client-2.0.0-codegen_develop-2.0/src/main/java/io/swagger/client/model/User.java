@@ -5,8 +5,10 @@ import java.util.Map;
 import io.swagger.client.model.Location;
 import java.util.*;
 
+
 import com.wordnik.swagger.annotations.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 
 /**
@@ -130,3 +132,5 @@ public class User  {
     return sb.toString();
   }
 }
+
+
