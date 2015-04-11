@@ -1,19 +1,18 @@
 package at.fwd.swagger.spring.demo.user;
 
-import org.apache.log4j.Logger;
+import io.swagger.client.ApiException;
+import io.swagger.client.api.UserApi;
+import io.swagger.client.model.User;
 
+import java.util.logging.Logger;
 
 import junit.framework.TestCase;
-
-import com.wordnik.client.api.UserApi;
-import com.wordnik.client.common.ApiException;
-import com.wordnik.client.model.User;
 
 public class GetUserTest extends TestCase {
 	/**
 	 * Logger for this class
 	 */
-	private static final Logger log = Logger.getLogger(GetUserTest.class);
+	private static final Logger log = Logger.getLogger(GetUserTest.class.getName());
 	
 	
 	public void testSuccess() {
