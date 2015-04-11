@@ -13,18 +13,45 @@ public class GetUserTest extends TestCase {
 	 * Logger for this class
 	 */
 	private static final Logger log = Logger.getLogger(GetUserTest.class.getName());
-	
-	
+		
 	public void testSuccess() {
 		
 		try {
 			UserApi api = new UserApi();
 			api.setBasePath("http://localhost:8080/");
 			
+			System.out.println("basepath: " + api.getBasePath());
+			
 			User user = api.getUser(new Long(1));
 			assertNotNull(user);
-			log.info("user: " + user.toString());
+			System.out.println ("response: " + user.toString());
 			
+			assertEquals("Test", user.getName());
+			
+			// TODO Swagger-Codegen-2 (develop-2.0 + 2.1.2-M2 + 2.1.2-M1) with Swagger-1.2: Enum seems not yet supported
+			//assertEquals(User.StateEnum.ACTIVE, user.getState());
+			
+			assertEquals(2, user.getCategories().size());
+			assertEquals("Category 1", user.getCategories().get(0).getName());
+			assertEquals("Category 2", user.getCategories().get(1).getName());
+
+		} catch (ApiException e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+		
+	}
+	
+	public void testNotFound() {
+		
+		try {
+			UserApi api = new UserApi();
+			api.setBasePath("http://localhost:8080/");
+			
+			System.out.println("basepath: " + api.getBasePath());
+			
+			User user = api.getUser(new Long(2));
+			assertNull(user);
 			
 		} catch (ApiException e) {
 			e.printStackTrace();
@@ -33,21 +60,6 @@ public class GetUserTest extends TestCase {
 		
 	}
 	
-	public void testError() {
-		
-		try {
-			UserApi api = new UserApi();
-			api.setBasePath("http://localhost:8080/");
-			
-			User user = api.getUser(new Long(2));
-			assertNull(user);
-			
-			
-		} catch (ApiException e) {
-			e.printStackTrace();
-			fail(e.getMessage());
-		}
-		
-	}
+
 
 }

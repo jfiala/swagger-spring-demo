@@ -9,7 +9,6 @@ import java.util.*;
 
 
 import com.sun.jersey.multipart.FormDataMultiPart;
-import com.sun.jersey.multipart.file.FileDataBodyPart;
 
 import javax.ws.rs.core.MediaType;
 
@@ -18,7 +17,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class UserwithresponseentityApi {
-  String basePath = "http://localhost/";
+  String basePath = "http://null/";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
   public ApiInvoker getInvoker() {
@@ -34,12 +33,7 @@ public class UserwithresponseentityApi {
   }
 
   
-  /**
-   * getUserResponseEntity
-   * getUserResponseEntity
-   * @param id id
-   * @return Object
-   */
+    
   public Object getUserResponseEntity (Long id) throws ApiException {
     Object postBody = null;
     
@@ -52,12 +46,12 @@ public class UserwithresponseentityApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if (id != null)
-      queryParams.put("id", ApiInvoker.parameterToString(id));
+    if(!"null".equals(String.valueOf(id)))
+      queryParams.put("id", String.valueOf(id));
     
     
     String[] contentTypes = {
-      "application/json",
+      "application/json"
     };
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -82,7 +76,12 @@ public class UserwithresponseentityApi {
         return null;
       }
     } catch (ApiException ex) {
-      throw ex;
+      if(ex.getCode() == 404) {
+      	return  null;
+      }
+      else {
+        throw ex;
+      }
     }
   }
   

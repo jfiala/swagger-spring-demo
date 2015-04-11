@@ -10,7 +10,6 @@ import java.util.*;
 import io.swagger.client.model.User;
 
 import com.sun.jersey.multipart.FormDataMultiPart;
-import com.sun.jersey.multipart.file.FileDataBodyPart;
 
 import javax.ws.rs.core.MediaType;
 
@@ -19,7 +18,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class UsergetreadApi {
-  String basePath = "http://localhost/";
+  String basePath = "http://null/";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
   public ApiInvoker getInvoker() {
@@ -35,30 +34,25 @@ public class UsergetreadApi {
   }
 
   
-  /**
-   * read User by ID
-   * pass ID to read user
-   * @param id id
-   * @return User
-   */
+    
   public User getUser (Long id) throws ApiException {
     Object postBody = null;
     
 
     // create path and map variables
-    String path = "/user_get3_read".replaceAll("\\{format\\}","json");
+    String path = "/user_get_read1".replaceAll("\\{format\\}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if (id != null)
-      queryParams.put("id", ApiInvoker.parameterToString(id));
+    if(!"null".equals(String.valueOf(id)))
+      queryParams.put("id", String.valueOf(id));
     
     
     String[] contentTypes = {
-      "application/json",
+      "application/json"
     };
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -83,7 +77,12 @@ public class UsergetreadApi {
         return null;
       }
     } catch (ApiException ex) {
-      throw ex;
+      if(ex.getCode() == 404) {
+      	return  null;
+      }
+      else {
+        throw ex;
+      }
     }
   }
   

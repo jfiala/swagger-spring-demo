@@ -1,6 +1,5 @@
 package io.swagger.client.model;
 
-import io.swagger.client.model.User;
 import io.swagger.client.model.Category;
 import io.swagger.client.model.Location;
 import java.util.*;
@@ -17,8 +16,6 @@ public class User  {
   
   private Long id = null;
   private String name = null;
-  private User state = null;
-  private List<String> photo = new ArrayList<String>() ;
   private List<Category> categories = new ArrayList<Category>() ;
   private List<Location> locations = new ArrayList<Location>() ;
 
@@ -26,7 +23,7 @@ public class User  {
   /**
    * ID of the user
    **/
-  @ApiModelProperty(value = "ID of the user")
+  @ApiModelProperty(required = false, value = "ID of the user")
   @JsonProperty("id")
   public Long getId() {
     return id;
@@ -39,7 +36,7 @@ public class User  {
   /**
    * Name of the user
    **/
-  @ApiModelProperty(value = "Name of the user")
+  @ApiModelProperty(required = false, value = "Name of the user")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -51,31 +48,7 @@ public class User  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
-  @JsonProperty("state")
-  public User getState() {
-    return state;
-  }
-  public void setState(User state) {
-    this.state = state;
-  }
-
-  
-  /**
-   **/
-  @ApiModelProperty(value = "")
-  @JsonProperty("photo")
-  public List<String> getPhoto() {
-    return photo;
-  }
-  public void setPhoto(List<String> photo) {
-    this.photo = photo;
-  }
-
-  
-  /**
-   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("categories")
   public List<Category> getCategories() {
     return categories;
@@ -87,7 +60,7 @@ public class User  {
   
   /**
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = false, value = "")
   @JsonProperty("locations")
   public List<Location> getLocations() {
     return locations;
@@ -105,8 +78,6 @@ public class User  {
     
     sb.append("  id: ").append(id).append("\n");
     sb.append("  name: ").append(name).append("\n");
-    sb.append("  state: ").append(state).append("\n");
-    sb.append("  photo: ").append(photo).append("\n");
     sb.append("  categories: ").append(categories).append("\n");
     sb.append("  locations: ").append(locations).append("\n");
     sb.append("}\n");
