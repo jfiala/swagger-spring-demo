@@ -50,4 +50,3 @@ Swagger 2.0.0 is currently under development, will always update to head
   Generated Java code using Swagger-Codegen using latest update 
 
 
-
