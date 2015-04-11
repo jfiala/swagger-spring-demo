@@ -1,22 +1,24 @@
 package at.fwd.swagger.spring.demo.user;
 
 import io.swagger.client.ApiException;
+import io.swagger.client.api.UserApi;
 import io.swagger.client.model.User;
-import junit.framework.TestCase;
 
-import org.apache.log4j.Logger;
+import java.util.logging.Logger;
+
+import junit.framework.TestCase;
 
 public class GetUserTest extends TestCase {
 	/**
 	 * Logger for this class
 	 */
-	private static final Logger log = Logger.getLogger(GetUserTest.class);
+	private static final Logger log = Logger.getLogger(GetUserTest.class.getName());
 	
 	
 	public void testSuccess() {
 		
 		try {
-			Userc api = new UserApi();
+			UserApi api = new UserApi();
 			api.setBasePath("http://localhost:8080/");
 			
 			User user = api.getUser(new Long(1));
@@ -29,7 +31,7 @@ public class GetUserTest extends TestCase {
 			fail(e.getMessage());
 		}
 		
-	}
+	} 
 	
 	public void testError() {
 		
@@ -38,12 +40,10 @@ public class GetUserTest extends TestCase {
 			api.setBasePath("http://localhost:8080/");
 			
 			User user = api.getUser(new Long(2));
-			assertNull(user);
-			
 			
 		} catch (ApiException e) {
-			e.printStackTrace();
-			fail(e.getMessage());
+			assertEquals(404, e.getCode());
+			
 		}
 		
 	}
