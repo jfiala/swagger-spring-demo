@@ -40,14 +40,13 @@ This uses the stable version 1.0.2 of Swagger-Spring Integration
 ## user-rest-service-2.0.0 / Swagger 2.0.0 (SNAPSHOT)
 Swagger 2.0.0 is currently under development, will always update to head
 
-* user-rest-service-2.0.0:
-  Spring Boot Application
+*   user-rest-service-2.0.0:
+    Spring Boot Application
 
-* user-rest-service-2.0.0-client-java-codegen-2.1.2-M1:
-  Generated Java code using Swagger-Codegen 
+*   user-rest-service-2.0.0-client-java-codegen-2.1.2-M1:
+    Generated Java code using Swagger-Codegen 
 
-* user-rest-service-2.0.0-client-java-codegen-develop-2.0:
-  Generated Java code using Swagger-Codegen using latest update 
-
+*   user-rest-service-2.0.0-client-java-codegen-develop-2.0:
+    Generated Java code using Swagger-Codegen using latest update 
 
 
