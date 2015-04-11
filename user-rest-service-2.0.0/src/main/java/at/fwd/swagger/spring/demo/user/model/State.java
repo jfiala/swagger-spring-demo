@@ -7,7 +7,5 @@ package at.fwd.swagger.spring.demo.user.model;
  *
  */
 public enum State {
-
 	ACTIVE, DISABLED;
-	
 }
