@@ -35,6 +35,11 @@ public class GetUserTest extends TestCase {
 			assertEquals("Category 1", user.getCategories().get(0).getName());
 			assertEquals("Category 2", user.getCategories().get(1).getName());
 
+			assertEquals(1, user.getLocations().size());
+			assertEquals(-122.40406, user.getLocations().get(0).getLongitude());
+			assertEquals(37.78199, user.getLocations().get(0).getLatitude());
+
+			
 		} catch (ApiException e) {
 			e.printStackTrace();
 			fail(e.getMessage());
