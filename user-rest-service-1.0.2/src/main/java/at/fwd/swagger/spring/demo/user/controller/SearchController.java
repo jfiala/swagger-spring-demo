@@ -36,6 +36,9 @@ public class SearchController {
 	
 	private static final String MESSAGE_SUCCESS = "Successful retrieval of user list";
 	
+
+	private static final String MESSAGE_POST_SUCCESS = "User has been updated";
+	
 	@Autowired
 	private UserController userController;
 	
@@ -56,6 +59,28 @@ public class SearchController {
 
 		return resultList;
     }
+    
+    @RequestMapping(method=RequestMethod.POST, value=PATH)
+    @ApiOperation(value="create or update a user name by id", position = 1)
+    @ApiResponses(value = {
+    	    @ApiResponse(code = 200, message = MESSAGE_POST_SUCCESS, response = User.class) })
+    public User saveUser(@RequestParam(required=true) Long id, 
+    		@RequestParam(required=true) String name) {
+    	User user = userController.getUserMap().get(id);
+
+    	if (user==null) {
+    		user = new User();
+    		user.setId(id);
+    		user.setName(name);
+    		userController.getUserMap().put(id,  user);
+
+    	} else {
+    		user.setName(name);
+    	}
+    	
+    	return user;
+    }
+
     
     
 }

@@ -23,7 +23,7 @@
 namespace SwaggerPetstore;
 
 
-class SearchApi {
+class UsercompletepostcompleteApi {
 
   function __construct($apiClient) {
     $this->apiClient = $apiClient;
@@ -31,76 +31,18 @@ class SearchApi {
 
   
   /**
-   * searchUsers
-   *
-   * search for users by name-part
-   *
-   * @param string $query query (required)
-   * @return array[User]
-   */
-   public function searchUsers($query) {
-
-      // parse inputs
-      $resourcePath = "/search";
-      $resourcePath = str_replace("{format}", "json", $resourcePath);
-      $method = "GET";
-      $httpBody = '';
-      $queryParams = array();
-      $headerParams = array();
-      $formParams = array();
-      $_header_accept = '*/*';
-      if ($_header_accept !== '') {
-        $headerParams['Accept'] = $_header_accept;
-      }
-      $_header_content_type = array('application/json',);
-      $headerParams['Content-Type'] = count($_header_content_type) > 0 ? $_header_content_type[0] : 'application/json';
-
-      // query params
-      if($query !== null) {
-        $queryParams['query'] = $this->apiClient->toQueryValue($query);
-      }
-      
-      
-      
-      
-
-      // for model (json/xml)
-      if (isset($body)) {
-        $httpBody = $body; // $body is the method argument, if present
-      }
-      
-      // for HTTP post (form)
-      if (strpos($headerParams['Content-Type'], "application/x-www-form-urlencoded") > -1) {
-        $httpBody = http_build_query($formParams);
-      }
-
-      // make the API Call
-      $response = $this->apiClient->callAPI($resourcePath, $method,
-                                            $queryParams, $httpBody,
-                                            $headerParams);
-
-      if(! $response) {
-        return null;
-      }
-
-  		$responseObject = $this->apiClient->deserialize($response,
-  		                                                'array[User]');
-  		return $responseObject;
-  }
-  
-  /**
-   * saveUser
+   * saveUserComplete
    *
    * create or update a user name by id
    *
    * @param int $id id (required)
-   * @param string $name name (required)
+   * @param string $user user (required)
    * @return User
    */
-   public function saveUser($id, $name) {
+   public function saveUserComplete($id, $user) {
 
       // parse inputs
-      $resourcePath = "/search";
+      $resourcePath = "/user_complete_post_complete";
       $resourcePath = str_replace("{format}", "json", $resourcePath);
       $method = "POST";
       $httpBody = '';
@@ -118,8 +60,8 @@ class SearchApi {
       if($id !== null) {
         $queryParams['id'] = $this->apiClient->toQueryValue($id);
       }// query params
-      if($name !== null) {
-        $queryParams['name'] = $this->apiClient->toQueryValue($name);
+      if($user !== null) {
+        $queryParams['user'] = $this->apiClient->toQueryValue($user);
       }
       
       

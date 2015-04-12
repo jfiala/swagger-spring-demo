@@ -13,6 +13,4 @@ foreach (glob(dirname(__FILE__)."/lib/*.php") as $filename)
 {
       require_once $filename;
 }
-
-
 ?>

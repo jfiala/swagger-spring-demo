@@ -8,11 +8,13 @@ $apiKey = "";
 
 $apiClient = new APIClient("http://localhost:8080", "");
 $userApi = new UserApi($apiClient);
-var_dump($userApi->getUser(1));
+$user = $userApi->getUser(1);
+var_dump($user);
 
 
 $searchApi = new SearchApi($apiClient);
-var_dump($searchApi->searchUsers("T"));
+$users = $searchApi->searchUsers("T");
+var_dump($users);
 
 
 ?>

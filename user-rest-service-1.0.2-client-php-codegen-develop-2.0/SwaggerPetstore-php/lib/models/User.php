@@ -32,17 +32,31 @@ class User implements ArrayAccess {
   static $swaggerTypes = array(
       'id' => 'int',
       'name' => 'string',
+      'first_name' => 'string',
+      'state' => 'string',
       'photo' => 'array[string]',
       'categories' => 'array[Category]',
-      'locations' => 'array[Location]'
+      'locations' => 'array[Location]',
+      'primitives' => 'ShowcaseDatatypePrimitives',
+      'math' => 'ShowcaseDatatypeMath',
+      'date' => 'ShowcaseDatatypeDate',
+      'create_timestamp' => 'DateTime',
+      'modify_timestamp' => 'DateTime'
   );
 
   static $attributeMap = array(
       'id' => 'id',
       'name' => 'name',
+      'first_name' => 'firstName',
+      'state' => 'state',
       'photo' => 'photo',
       'categories' => 'categories',
-      'locations' => 'locations'
+      'locations' => 'locations',
+      'primitives' => 'primitives',
+      'math' => 'math',
+      'date' => 'date',
+      'create_timestamp' => 'createTimestamp',
+      'modify_timestamp' => 'modifyTimestamp'
   );
 
   
@@ -54,16 +68,48 @@ class User implements ArrayAccess {
   * Name of the user
   */
   public $name; /* string */
+  /**
+  * First name of the user
+  */
+  public $first_name; /* string */
+  /**
+  * 
+  */
+  public $state; /* string */
+  /**
+  * demo for java.lang.Byte[]
+  */
   public $photo; /* array[string] */
+  /**
+  * demo for java.util.List
+  */
   public $categories; /* array[Category] */
   public $locations; /* array[Location] */
+  public $primitives; /* ShowcaseDatatypePrimitives */
+  public $math; /* ShowcaseDatatypeMath */
+  public $date; /* ShowcaseDatatypeDate */
+  /**
+  * created
+  */
+  public $create_timestamp; /* DateTime */
+  /**
+  * last modified
+  */
+  public $modify_timestamp; /* DateTime */
 
   public function __construct(array $data = null) {
     $this->id = $data["id"];
     $this->name = $data["name"];
+    $this->first_name = $data["first_name"];
+    $this->state = $data["state"];
     $this->photo = $data["photo"];
     $this->categories = $data["categories"];
     $this->locations = $data["locations"];
+    $this->primitives = $data["primitives"];
+    $this->math = $data["math"];
+    $this->date = $data["date"];
+    $this->create_timestamp = $data["create_timestamp"];
+    $this->modify_timestamp = $data["modify_timestamp"];
   }
 
   public function offsetExists($offset) {
