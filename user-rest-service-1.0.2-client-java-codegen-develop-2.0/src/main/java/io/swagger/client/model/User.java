@@ -1,6 +1,10 @@
 package io.swagger.client.model;
 
+import io.swagger.client.model.ShowcaseDatatypePrimitives;
 import io.swagger.client.model.Category;
+import java.util.Date;
+import io.swagger.client.model.ShowcaseDatatypeDate;
+import io.swagger.client.model.ShowcaseDatatypeMath;
 import io.swagger.client.model.Location;
 import java.util.*;
 
@@ -26,6 +30,11 @@ public class User  {
   private List<String> photo = new ArrayList<String>() ;
   private List<Category> categories = new ArrayList<Category>() ;
   private List<Location> locations = new ArrayList<Location>() ;
+  private ShowcaseDatatypePrimitives primitives = null;
+  private ShowcaseDatatypeMath math = null;
+  private ShowcaseDatatypeDate date = null;
+  private Date createTimestamp = null;
+  private Date modifyTimestamp = null;
 
   
   /**
@@ -118,6 +127,68 @@ public class User  {
   }
 
   
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  @JsonProperty("primitives")
+  public ShowcaseDatatypePrimitives getPrimitives() {
+    return primitives;
+  }
+  public void setPrimitives(ShowcaseDatatypePrimitives primitives) {
+    this.primitives = primitives;
+  }
+
+  
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  @JsonProperty("math")
+  public ShowcaseDatatypeMath getMath() {
+    return math;
+  }
+  public void setMath(ShowcaseDatatypeMath math) {
+    this.math = math;
+  }
+
+  
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  @JsonProperty("date")
+  public ShowcaseDatatypeDate getDate() {
+    return date;
+  }
+  public void setDate(ShowcaseDatatypeDate date) {
+    this.date = date;
+  }
+
+  
+  /**
+   * created
+   **/
+  @ApiModelProperty(value = "created")
+  @JsonProperty("createTimestamp")
+  public Date getCreateTimestamp() {
+    return createTimestamp;
+  }
+  public void setCreateTimestamp(Date createTimestamp) {
+    this.createTimestamp = createTimestamp;
+  }
+
+  
+  /**
+   * last modified
+   **/
+  @ApiModelProperty(value = "last modified")
+  @JsonProperty("modifyTimestamp")
+  public Date getModifyTimestamp() {
+    return modifyTimestamp;
+  }
+  public void setModifyTimestamp(Date modifyTimestamp) {
+    this.modifyTimestamp = modifyTimestamp;
+  }
+
+  
 
   @Override
   public String toString()  {
@@ -131,6 +202,11 @@ public class User  {
     sb.append("  photo: ").append(photo).append("\n");
     sb.append("  categories: ").append(categories).append("\n");
     sb.append("  locations: ").append(locations).append("\n");
+    sb.append("  primitives: ").append(primitives).append("\n");
+    sb.append("  math: ").append(math).append("\n");
+    sb.append("  date: ").append(date).append("\n");
+    sb.append("  createTimestamp: ").append(createTimestamp).append("\n");
+    sb.append("  modifyTimestamp: ").append(modifyTimestamp).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

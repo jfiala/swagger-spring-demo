@@ -1,6 +1,10 @@
 package at.fwd.swagger.spring.demo.user.controller;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -18,6 +22,9 @@ import at.fwd.swagger.spring.demo.user.model.Category;
 import at.fwd.swagger.spring.demo.user.model.Location;
 import at.fwd.swagger.spring.demo.user.model.State;
 import at.fwd.swagger.spring.demo.user.model.User;
+import at.fwd.swagger.spring.demo.user.model.showcase.ShowcaseDatatypeDate;
+import at.fwd.swagger.spring.demo.user.model.showcase.ShowcaseDatatypeMath;
+import at.fwd.swagger.spring.demo.user.model.showcase.ShowcaseDatatypePrimitives;
 
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
@@ -50,7 +57,7 @@ public class UserController {
 	private static final String MESSAGE_POST_SUCCESS = "User has been updated";
 	
 	@PostConstruct
-	public void init() {
+	public void init() throws ParseException {
 		log.debug("setting up usercontroller");
 		User firstUser = new User();
 		firstUser.setName("Test");
@@ -76,6 +83,36 @@ public class UserController {
 		location.setLatitude(new BigDecimal("37.78199"));
 		location.setLongitude(new Double(-122.40406));
 		firstUser.getLocations().add(location);
+		
+
+		// Maximum test
+		ShowcaseDatatypePrimitives primitives = new ShowcaseDatatypePrimitives();
+		primitives.setSingleByte(Byte.MAX_VALUE);
+		primitives.setTinyNumber(Short.MAX_VALUE);
+		primitives.setCounter(Integer.MAX_VALUE);
+		primitives.setId(Long.MAX_VALUE);
+		
+		// TODO: float
+		primitives.setBudgetFloat( Float.MAX_VALUE);
+		
+		primitives.setBudget(Double.MAX_VALUE);
+		primitives.setDeleted(false);
+		primitives.setSingleCharacter('\uffff');
+		firstUser.setPrimitives(primitives);
+		
+		ShowcaseDatatypeMath math = new ShowcaseDatatypeMath();
+		math.setBigDecimal(BigDecimal.valueOf(Double.MAX_VALUE));
+		math.setBigInteger(BigInteger.valueOf(Long.MAX_VALUE));
+		firstUser.setMath(math);
+		
+		ShowcaseDatatypeDate date = new ShowcaseDatatypeDate();
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+		date.setDate(format.parse("2015-04-12 16:47:12.123"));
+		log.info("date: " + date.getDate());
+		
+		// TODO: Calendar
+		date.setCalendar(Calendar.getInstance());
+		firstUser.setDate(date);
 		
 		userMap.put(firstUser.getId(), firstUser);
 		
