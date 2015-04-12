@@ -1,10 +1,9 @@
 package at.fwd.swagger.spring.demo.user.system;
 
-import org.apache.log4j.Logger;
-
 import io.github.jhipster.loaded.JHipsterReloaderAutoConfiguration;
 import io.github.jhipster.loaded.reloader.SpringReloader;
 
+import org.apache.log4j.Logger;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
@@ -46,11 +45,14 @@ public class HotReloadConfiguration {
 
 	@Bean
 	public JHipsterReloaderAutoConfiguration reloaderAutoConfiguration() {
-		log.info("activating reloadinger configuration");
+		log.info("activating reloader configuration");
 		// set Package path to monitor
 		System.setProperty("hotReload.package.project", "at.fwd.swagger.spring.demo.user");
+		System.setProperty("hotReload.package.domain", "at.fwd.swagger.spring.demo.user.bo");
+		System.setProperty("hotReload.package.restdto", "at.fwd.swagger.spring.demo.user.model");
 		
 		JHipsterReloaderAutoConfiguration config = new JHipsterReloaderAutoConfiguration();
+		//FjxJHipsterReloaderAutoConfiguration config = new FjxJHipsterReloaderAutoConfiguration();
 		return config;
 	}
 

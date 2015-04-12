@@ -22,6 +22,9 @@ public class User {
     @ApiModelProperty(notes = "Name of the user", required = true, position = 1)
 	private String name;
     
+    @ApiModelProperty(notes = "First name of the user", required = true, position = 3)
+	private String firstName;
+    
     @ApiModelProperty(required = false, position = 3)
     private State state;
         
@@ -101,6 +104,14 @@ public class User {
 
 	public void setLocations(List<Location> locations) {
 		this.locations = locations;
+	} 
+
+	public String getFirstName() {
+		return firstName;
+	} 
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
         
