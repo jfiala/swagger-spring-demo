@@ -42,7 +42,7 @@ public class BasicerrorcontrollerApi {
    * errorHtml
    * @return ModelAndView
    */
-  public ModelAndView errorHtmlUsingGET () throws ApiException {
+  public ModelAndView errorGet () throws ApiException {
     Object postBody = null;
     
 
@@ -91,7 +91,7 @@ public class BasicerrorcontrollerApi {
    * errorHtml
    * @return ModelAndView
    */
-  public ModelAndView errorHtmlUsingPUT () throws ApiException {
+  public ModelAndView errorPut () throws ApiException {
     Object postBody = null;
     
 
@@ -140,7 +140,7 @@ public class BasicerrorcontrollerApi {
    * errorHtml
    * @return ModelAndView
    */
-  public ModelAndView errorHtmlUsingPOST () throws ApiException {
+  public ModelAndView errorPost () throws ApiException {
     Object postBody = null;
     
 
@@ -189,7 +189,7 @@ public class BasicerrorcontrollerApi {
    * errorHtml
    * @return ModelAndView
    */
-  public ModelAndView errorHtmlUsingDELETE () throws ApiException {
+  public ModelAndView errorDelete () throws ApiException {
     Object postBody = null;
     
 
@@ -238,7 +238,7 @@ public class BasicerrorcontrollerApi {
    * errorHtml
    * @return ModelAndView
    */
-  public ModelAndView errorHtmlUsingPATCH () throws ApiException {
+  public ModelAndView errorPatch () throws ApiException {
     Object postBody = null;
     
 
@@ -287,7 +287,7 @@ public class BasicerrorcontrollerApi {
    * errorHtml
    * @return ModelAndView
    */
-  public ModelAndView errorHtmlUsingOPTIONS () throws ApiException {
+  public ModelAndView errorOptions () throws ApiException {
     Object postBody = null;
     
 

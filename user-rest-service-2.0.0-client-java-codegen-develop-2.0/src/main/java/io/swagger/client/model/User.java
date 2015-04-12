@@ -1,6 +1,9 @@
 package io.swagger.client.model;
 
+import io.swagger.client.model.ShowcaseDatatypePrimitives;
 import io.swagger.client.model.Category;
+import io.swagger.client.model.ShowcaseDatatypeDate;
+import io.swagger.client.model.ShowcaseDatatypeMath;
 import java.util.Map;
 import io.swagger.client.model.Location;
 import java.util.*;
@@ -18,11 +21,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class User  {
   
   private List<Category> categories = new ArrayList<Category>() ;
+  private ShowcaseDatatypeDate date = null;
   private Long id = null;
   private Map<String, Location> locationMap = new HashMap<String, Location>() ;
   private List<Location> locations = new ArrayList<Location>() ;
+  private ShowcaseDatatypeMath math = null;
   private String name = null;
   private List<String> photo = new ArrayList<String>() ;
+  private ShowcaseDatatypePrimitives primitives = null;
   public enum StateEnum {
      ACTIVE,  DISABLED, 
   };
@@ -30,14 +36,27 @@ public class User  {
 
   
   /**
+   * demo for java.util.List
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "demo for java.util.List")
   @JsonProperty("categories")
   public List<Category> getCategories() {
     return categories;
   }
   public void setCategories(List<Category> categories) {
     this.categories = categories;
+  }
+
+  
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  @JsonProperty("date")
+  public ShowcaseDatatypeDate getDate() {
+    return date;
+  }
+  public void setDate(ShowcaseDatatypeDate date) {
+    this.date = date;
   }
 
   
@@ -55,8 +74,9 @@ public class User  {
 
   
   /**
+   * demo for java.util.Map
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "demo for java.util.Map")
   @JsonProperty("locationMap")
   public Map<String, Location> getLocationMap() {
     return locationMap;
@@ -79,6 +99,18 @@ public class User  {
 
   
   /**
+   **/
+  @ApiModelProperty(value = "")
+  @JsonProperty("math")
+  public ShowcaseDatatypeMath getMath() {
+    return math;
+  }
+  public void setMath(ShowcaseDatatypeMath math) {
+    this.math = math;
+  }
+
+  
+  /**
    * Name of the user
    **/
   @ApiModelProperty(required = true, value = "Name of the user")
@@ -92,8 +124,9 @@ public class User  {
 
   
   /**
+   * demo for java.lang.Byte[]
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "demo for java.lang.Byte[]")
   @JsonProperty("photo")
   public List<String> getPhoto() {
     return photo;
@@ -106,6 +139,19 @@ public class User  {
   /**
    **/
   @ApiModelProperty(value = "")
+  @JsonProperty("primitives")
+  public ShowcaseDatatypePrimitives getPrimitives() {
+    return primitives;
+  }
+  public void setPrimitives(ShowcaseDatatypePrimitives primitives) {
+    this.primitives = primitives;
+  }
+
+  
+  /**
+   * Current state
+   **/
+  @ApiModelProperty(value = "Current state")
   @JsonProperty("state")
   public StateEnum getState() {
     return state;
@@ -122,11 +168,14 @@ public class User  {
     sb.append("class User {\n");
     
     sb.append("  categories: ").append(categories).append("\n");
+    sb.append("  date: ").append(date).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  locationMap: ").append(locationMap).append("\n");
     sb.append("  locations: ").append(locations).append("\n");
+    sb.append("  math: ").append(math).append("\n");
     sb.append("  name: ").append(name).append("\n");
     sb.append("  photo: ").append(photo).append("\n");
+    sb.append("  primitives: ").append(primitives).append("\n");
     sb.append("  state: ").append(state).append("\n");
     sb.append("}\n");
     return sb.toString();

@@ -17,7 +17,7 @@ public class GetUserResponseEntityTest extends TestCase {
 		api.setBasePath("http://localhost:8080/");
 
 		try {
-			Map<String, Object> user = (Map<String, Object>) api.getUserResponseEntityUsingGET(new Long(1));
+			Map<String, Object> user = (Map<String, Object>) api.user_with_responseentityGet(new Long(1));
 			System.out.println("map: " + user);
 
 			assertEquals("Test", user.get("name"));

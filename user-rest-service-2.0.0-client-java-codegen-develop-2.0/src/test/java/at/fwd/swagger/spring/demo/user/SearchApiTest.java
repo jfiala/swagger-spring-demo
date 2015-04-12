@@ -17,7 +17,7 @@ public class SearchApiTest extends TestCase {
 			SearchservicesApi api = new SearchservicesApi();
 			api.setBasePath("http://localhost:8080/");
 			
-			List<User> users = api.searchUsersUsingGET("T");
+			List<User> users = api.searchGet("T");
 			System.out.println ("response: " + users.toString());
 			
 			assertTrue(users.size()>0);

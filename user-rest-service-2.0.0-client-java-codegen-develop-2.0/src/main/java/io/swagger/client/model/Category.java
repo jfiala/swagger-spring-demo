@@ -7,7 +7,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 
-@ApiModel(description = "")
+/**
+ * Category object
+ **/
+@ApiModel(description = "Category object")
 public class Category  {
   
   private Long id = null;

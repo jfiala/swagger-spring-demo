@@ -43,7 +43,7 @@ public class SearchservicesApi {
    * @param query query
    * @return List<User>
    */
-  public List<User> searchUsersUsingGET (String query) throws ApiException {
+  public List<User> searchGet (String query) throws ApiException {
     Object postBody = null;
     
 

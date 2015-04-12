@@ -24,7 +24,7 @@ public class GetUserTest extends TestCase {
 			
 			System.out.println("basepath: " + api.getBasePath());
 			
-			User user = api.getUserUsingGET(new Long(1));
+			User user = api.userGet(new Long(1));
 			assertNotNull(user);
 			System.out.println ("response: " + user.toString());
 			
@@ -56,7 +56,7 @@ public class GetUserTest extends TestCase {
 			
 			System.out.println("basepath: " + api.getBasePath());
 			
-			api.getUserUsingGET(new Long(2));
+			api.userGet(new Long(2));
 			fail("should fail");
 			
 		} catch (ApiException e) {
