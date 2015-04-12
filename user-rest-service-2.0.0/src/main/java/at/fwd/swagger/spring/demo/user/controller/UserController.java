@@ -103,10 +103,11 @@ public class UserController {
 		ShowcaseDatatypeDate showcaseDate = new ShowcaseDatatypeDate();
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 		showcaseDate.setDate(format.parse("2015-04-12 16:47:12.123"));
-		log.info("date: " + showcaseDate.getDate());
+		log.debug("date: " + showcaseDate.getDate());
 		
 		// TODO: Calendar
-		showcaseDate.setCalendar(Calendar.getInstance());
+		//showcaseDate.setCalendar(Calendar.getInstance());
+		
 		firstUser.setDate(showcaseDate);
 		
 		userMap.put(firstUser.getId(), firstUser);
