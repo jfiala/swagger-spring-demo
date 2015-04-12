@@ -52,7 +52,6 @@ public class HotReloadConfiguration {
 		System.setProperty("hotReload.package.restdto", "at.fwd.swagger.spring.demo.user.model");
 		
 		JHipsterReloaderAutoConfiguration config = new JHipsterReloaderAutoConfiguration();
-		//FjxJHipsterReloaderAutoConfiguration config = new FjxJHipsterReloaderAutoConfiguration();
 		return config;
 	}
 

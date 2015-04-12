@@ -121,24 +121,6 @@ public class UserController {
     	return user;
     }
 
-
-    @RequestMapping(method=RequestMethod.POST, value=PATH + "_complete")
-    @ApiOperation(value="create or update a user name by id", position = 1)
-    @ApiResponses(value = {
-    	    @ApiResponse(code = 200, message = MESSAGE_POST_SUCCESS, response = User.class) })
-    public User saveUserComplete(@RequestParam(required=true) Long id, 
-    		@RequestParam(required=true) User user) {
-    	
-    	if (user!=null) {
-    		userMap.put(id,  user);
-
-    	} else {
-    		throw new ObjectNotFoundException(MESSAGE_NOT_FOUND);
-    	}
-    	
-    	return user;
-    }
-    
 	public ConcurrentMap<Long, User> getUserMap() {
 		return userMap;
 	}
