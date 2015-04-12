@@ -2,6 +2,7 @@ package at.fwd.swagger.spring.demo.user.model;
 
 import java.math.BigDecimal;
 
+import com.wordnik.swagger.annotations.ApiModel;
 import com.wordnik.swagger.annotations.ApiModelProperty;
 
 /**
@@ -10,6 +11,7 @@ import com.wordnik.swagger.annotations.ApiModelProperty;
  * @author johannes.fiala@fwd.at
  *
  */
+@ApiModel(description="Location object")
 public class Location {
 	
 	String street;

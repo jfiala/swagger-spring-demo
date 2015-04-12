@@ -8,7 +8,7 @@ import com.wordnik.swagger.annotations.ApiModel;
  * @author johannes.fiala@fwd.at
  *
  */
-@ApiModel(value="State", description="State object")
+@ApiModel(description="State object")
 public enum State {
 
 	ACTIVE, DISABLED;

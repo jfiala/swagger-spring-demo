@@ -70,8 +70,9 @@ public class Location  {
 
   
   /**
+   * demo for java.math.BigDecimal
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "demo for java.math.BigDecimal")
   @JsonProperty("latitude")
   public Double getLatitude() {
     return latitude;
@@ -82,8 +83,9 @@ public class Location  {
 
   
   /**
+   * demo for java.lang.Double
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "demo for java.lang.Double")
   @JsonProperty("longitude")
   public Double getLongitude() {
     return longitude;

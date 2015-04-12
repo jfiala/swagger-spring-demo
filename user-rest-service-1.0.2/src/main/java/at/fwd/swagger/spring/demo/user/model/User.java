@@ -16,21 +16,19 @@ import com.wordnik.swagger.annotations.ApiModelProperty;
 @ApiModel(value="User", description="User object")
 public class User {
 
-	@ApiModelProperty(value = "ID of the user", required = true, position = 2)
+	@ApiModelProperty(notes = "ID of the user", required = true, position = 2)
     private long id;
     
-    @ApiModelProperty(value = "Name of the user", required = true, position = 1)
+    @ApiModelProperty(notes = "Name of the user", required = true, position = 1)
 	private String name;
     
-    // TODO Swagger-Springfox (develop-2.0 + 2.1.2-M2 + 2.1.2-M1) with Swagger-1.2: Enum seems not yet supported (https://github.com/springfox/springfox/issues/668)
-    @ApiModelProperty(value = "State", required = false, position = 3)
-    @JsonIgnore
+    @ApiModelProperty(required = false, position = 3)
     private State state;
         
     @JsonIgnore
 	private String hiddenString;
 
-    // TODO Swagger-Codegen-2.0.13: causes error with swagger-codegen-2.0.13: reserved word "byte" not allowed
+    // TODO Swagger-Codegen-2.0.13: causes error with swagger-codegen-2.0.13: reserved word "byte" not allowed, fixed as of 2.1.2-M1
     @ApiModelProperty(notes="demo for java.lang.Byte[]")
     private Byte[] photo;
     

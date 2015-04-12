@@ -18,6 +18,11 @@ public class User  {
   
   private Long id = null;
   private String name = null;
+  public enum StateEnum {
+     ACTIVE,  DISABLED, 
+  };
+  private StateEnum state = null;
+  private List<String> photo = new ArrayList<String>() ;
   private List<Category> categories = new ArrayList<Category>() ;
   private List<Location> locations = new ArrayList<Location>() ;
 
@@ -49,8 +54,35 @@ public class User  {
 
   
   /**
+   * 
    **/
   @ApiModelProperty(value = "")
+  @JsonProperty("state")
+  public StateEnum getState() {
+    return state;
+  }
+  public void setState(StateEnum state) {
+    this.state = state;
+  }
+
+  
+  /**
+   * demo for java.lang.Byte[]
+   **/
+  @ApiModelProperty(value = "demo for java.lang.Byte[]")
+  @JsonProperty("photo")
+  public List<String> getPhoto() {
+    return photo;
+  }
+  public void setPhoto(List<String> photo) {
+    this.photo = photo;
+  }
+
+  
+  /**
+   * demo for java.util.List
+   **/
+  @ApiModelProperty(value = "demo for java.util.List")
   @JsonProperty("categories")
   public List<Category> getCategories() {
     return categories;
@@ -80,6 +112,8 @@ public class User  {
     
     sb.append("  id: ").append(id).append("\n");
     sb.append("  name: ").append(name).append("\n");
+    sb.append("  state: ").append(state).append("\n");
+    sb.append("  photo: ").append(photo).append("\n");
     sb.append("  categories: ").append(categories).append("\n");
     sb.append("  locations: ").append(locations).append("\n");
     sb.append("}\n");

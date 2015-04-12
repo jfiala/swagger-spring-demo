@@ -1,6 +1,14 @@
 package at.fwd.swagger.spring.demo.user.model;
 
+import com.wordnik.swagger.annotations.ApiModel;
 
+/**
+ * Category object 
+ * 
+ * @author johannes.fiala@fwd.at
+ *
+ */
+@ApiModel(description="Category object")
 public class Category {
 
 	private Long id;
