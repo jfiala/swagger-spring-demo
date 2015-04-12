@@ -5,6 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import at.fwd.swagger.spring.demo.user.model.showcase.ShowcaseDatatypeDate;
+import at.fwd.swagger.spring.demo.user.model.showcase.ShowcaseDatatypeMath;
+import at.fwd.swagger.spring.demo.user.model.showcase.ShowcaseDatatypePrimitives;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.wordnik.swagger.annotations.ApiModel;
 import com.wordnik.swagger.annotations.ApiModelProperty;
@@ -43,6 +47,14 @@ public class User {
     
     @ApiModelProperty(notes="demo for java.util.Map")
     private Map<String, Location> locationMap;
+    
+
+
+    private ShowcaseDatatypePrimitives primitives;
+    
+    private ShowcaseDatatypeMath math;
+    
+    private ShowcaseDatatypeDate date;
     
     public User() {
     	categories = new ArrayList<Category>();
@@ -103,6 +115,30 @@ public class User {
 
 	public void setLocations(List<Location> locations) {
 		this.locations = locations;
+	}
+
+	public ShowcaseDatatypePrimitives getPrimitives() {
+		return primitives;
+	}
+
+	public void setPrimitives(ShowcaseDatatypePrimitives primitives) {
+		this.primitives = primitives;
+	}
+
+	public ShowcaseDatatypeMath getMath() {
+		return math;
+	}
+
+	public void setMath(ShowcaseDatatypeMath math) {
+		this.math = math;
+	}
+
+	public ShowcaseDatatypeDate getDate() {
+		return date;
+	}
+
+	public void setDate(ShowcaseDatatypeDate date) {
+		this.date = date;
 	}
 
     

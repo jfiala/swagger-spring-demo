@@ -42,7 +42,7 @@ public class UsercrudresponseentityApi {
    * @param id id
    * @return Object
    */
-  public Object getUserResponseEntityUsingGET (Long id) throws ApiException {
+  public Object user_with_responseentityGet (Long id) throws ApiException {
     Object postBody = null;
     
 
