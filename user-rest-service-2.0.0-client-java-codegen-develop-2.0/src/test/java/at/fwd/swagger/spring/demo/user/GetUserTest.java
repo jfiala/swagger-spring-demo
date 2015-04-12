@@ -39,6 +39,7 @@ public class GetUserTest extends TestCase {
 			assertEquals(1, user.getLocations().size());
 			assertEquals(-122.40406, user.getLocations().get(0).getLongitude());
 			assertEquals(37.78199, user.getLocations().get(0).getLatitude());
+			
 
 		} catch (ApiException e) {
 			e.printStackTrace();
