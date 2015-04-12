@@ -1,7 +1,12 @@
 package at.fwd.swagger.spring.demo.user.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
+import at.fwd.swagger.spring.demo.user.model.showcase.ShowcaseDatatypeDate;
+import at.fwd.swagger.spring.demo.user.model.showcase.ShowcaseDatatypeMath;
+import at.fwd.swagger.spring.demo.user.model.showcase.ShowcaseDatatypePrimitives;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.wordnik.swagger.annotations.ApiModel;
@@ -43,11 +48,22 @@ public class User {
     // TODO Swagger-Springfox-1.0.2: Maps are not yet supported correctly in Swagger 1.0.2 - result in Entry«string,Location»
     //private Map<String, Location> locationMap;
 
+    private ShowcaseDatatypePrimitives primitives;
+    
+    private ShowcaseDatatypeMath math;
+    
+    private ShowcaseDatatypeDate date;
+    
+    @ApiModelProperty(notes="created")
+    private Date createTimestamp;
+    
+    @ApiModelProperty(notes="last modified")
+    private Date modifyTimestamp;
 
     public User() {
     	categories = new ArrayList<Category>();
     	locations = new ArrayList<Location>();
-    	
+    	primitives = new ShowcaseDatatypePrimitives();
     }
     
 	public long getId() {
@@ -112,6 +128,46 @@ public class User {
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
+	}
+
+	public ShowcaseDatatypePrimitives getPrimitives() {
+		return primitives;
+	}
+
+	public void setPrimitives(ShowcaseDatatypePrimitives primitives) {
+		this.primitives = primitives;
+	}
+
+	public Date getCreateTimestamp() {
+		return createTimestamp;
+	}
+
+	public void setCreateTimestamp(Date createTimestamp) {
+		this.createTimestamp = createTimestamp;
+	}
+
+	public Date getModifyTimestamp() {
+		return modifyTimestamp;
+	}
+
+	public void setModifyTimestamp(Date modifyTimestamp) {
+		this.modifyTimestamp = modifyTimestamp;
+	}
+
+	public ShowcaseDatatypeMath getMath() {
+		return math;
+	}
+
+	public void setMath(ShowcaseDatatypeMath math) {
+		this.math = math;
+	}
+
+	public ShowcaseDatatypeDate getDate() {
+		return date;
+	}
+
+	public void setDate(ShowcaseDatatypeDate date) {
+		this.date = date;
 	}
 
         
