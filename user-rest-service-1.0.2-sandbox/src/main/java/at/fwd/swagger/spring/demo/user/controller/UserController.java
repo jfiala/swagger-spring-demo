@@ -84,7 +84,6 @@ public class UserController {
 		location.setLongitude(new Double(-122.40406));
 		firstUser.getLocations().add(location);
 		
-
 		// Maximum test
 		ShowcaseDatatypePrimitives primitives = new ShowcaseDatatypePrimitives();
 		primitives.setSingleByte(Byte.MAX_VALUE);
