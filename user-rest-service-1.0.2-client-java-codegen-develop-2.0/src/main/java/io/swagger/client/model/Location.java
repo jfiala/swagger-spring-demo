@@ -8,9 +8,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 /**
- * 
+ * Location object
  **/
-@ApiModel(description = "")
+@ApiModel(description = "Location object")
 public class Location  {
   
   private String street = null;

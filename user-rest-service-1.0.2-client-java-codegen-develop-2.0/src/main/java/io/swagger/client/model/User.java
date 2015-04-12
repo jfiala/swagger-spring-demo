@@ -18,6 +18,7 @@ public class User  {
   
   private Long id = null;
   private String name = null;
+  private String firstName = null;
   public enum StateEnum {
      ACTIVE,  DISABLED, 
   };
@@ -50,6 +51,19 @@ public class User  {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  
+  /**
+   * First name of the user
+   **/
+  @ApiModelProperty(value = "First name of the user")
+  @JsonProperty("firstName")
+  public String getFirstName() {
+    return firstName;
+  }
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
   }
 
   
@@ -112,6 +126,7 @@ public class User  {
     
     sb.append("  id: ").append(id).append("\n");
     sb.append("  name: ").append(name).append("\n");
+    sb.append("  firstName: ").append(firstName).append("\n");
     sb.append("  state: ").append(state).append("\n");
     sb.append("  photo: ").append(photo).append("\n");
     sb.append("  categories: ").append(categories).append("\n");
