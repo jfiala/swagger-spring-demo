@@ -107,7 +107,7 @@ public class UserController {
 		
 		// TODO: Calendar
 		//showcaseDate.setCalendar(Calendar.getInstance());
-		
+
 		firstUser.setDate(showcaseDate);
 		
 		userMap.put(firstUser.getId(), firstUser);
