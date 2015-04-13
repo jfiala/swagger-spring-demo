@@ -42,7 +42,7 @@ public class UserControllerResponseEntity {
     	
     		return new ResponseEntity<User>(user, HttpStatus.OK);	
     	} else {
-    		return new ResponseEntity<String>("Unexpected Error", HttpStatus.INTERNAL_SERVER_ERROR);	
+    		return new ResponseEntity<String>("User has not been found", HttpStatus.NOT_FOUND);	
     	}
     }
     

@@ -20,8 +20,8 @@ import java.util.Map;
 import java.util.HashMap;
 
 
-public class UsergettworeadApi {
-  String basePath = "http://localhost/";
+public class UsercrudcompletepostApi {
+  String basePath = "https://localhost:8080/";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
   public ApiInvoker getInvoker() {
@@ -38,17 +38,18 @@ public class UsergettworeadApi {
 
   
   /**
-   * read User by ID
-   * pass ID to read user
+   * create or update a user name by id
+   * saveUserComplete
    * @param id id
+   * @param user user
    * @return User
    */
-  public User getUser (Long id) throws ApiException {
+  public User user_complete_post_completePost (Long id, String user) throws ApiException {
     Object postBody = null;
     
 
     // create path and map variables
-    String path = "/user_get_two_read1".replaceAll("\\{format\\}","json");
+    String path = "/user_complete_post_complete".replaceAll("\\{format\\}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -57,6 +58,8 @@ public class UsergettworeadApi {
 
     if (id != null)
       queryParams.put("id", ApiInvoker.parameterToString(id));
+    if (user != null)
+      queryParams.put("user", ApiInvoker.parameterToString(user));
     
     
     String[] contentTypes = {
@@ -77,7 +80,7 @@ public class UsergettworeadApi {
     }
 
     try {
-      String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
+      String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
         return (User) ApiInvoker.deserialize(response, "", User.class);
       }
