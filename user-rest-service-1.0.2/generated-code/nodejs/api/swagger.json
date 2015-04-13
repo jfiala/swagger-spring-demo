@@ -1,0 +1,435 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Spring SwaggerMvc demo application",
+    "description": "based on 1.0.2, shows CRUD operations and datatype conversions",
+    "version": "1.0.0"
+  },
+
+  "produces": ["application/json"],
+  "host": "localhost:8080",
+  "basePath": "/",
+  "paths": {
+
+
+  
+  "/user": {
+    "get": {
+      "x-swagger-router-controller": "User",
+      "tags": ["User"],
+      "operationId": "getUser",
+      "parameters": [
+        
+        {
+  "name" : "id",
+  "in" : "query",
+  "description" : "id",
+  "required" : true,
+  "type" : "integer",
+  "default" : "",
+  "format" : "int64"
+}
+        
+      ],
+      "responses": {
+        
+        "404": {
+  "description" : "User not found",
+  "schema" : {
+    "$ref" : "#/definitions/Void"
+  }
+}
+        ,
+        
+        "200": {
+  "description" : "success",
+  "schema" : {
+    "$ref" : "#/definitions/User"
+  }
+}
+        
+        
+      }
+    }
+  } ,
+  
+  "/user": {
+    "post": {
+      "x-swagger-router-controller": "User",
+      "tags": ["User"],
+      "operationId": "saveUser",
+      "parameters": [
+        
+        {
+  "name" : "id",
+  "in" : "query",
+  "description" : "id",
+  "required" : true,
+  "type" : "integer",
+  "default" : "",
+  "format" : "int64"
+},
+        
+        {
+  "name" : "name",
+  "in" : "query",
+  "description" : "name",
+  "required" : true,
+  "type" : "string",
+  "default" : ""
+}
+        
+      ],
+      "responses": {
+        
+        "200": {
+  "description" : "success",
+  "schema" : {
+    "$ref" : "#/definitions/User"
+  }
+}
+        
+        
+      }
+    }
+  } 
+  
+   ,
+
+
+
+  
+  "/search": {
+    "get": {
+      "x-swagger-router-controller": "Search",
+      "tags": ["Search"],
+      "operationId": "searchUsers",
+      "parameters": [
+        
+        {
+  "name" : "query",
+  "in" : "query",
+  "description" : "query",
+  "required" : true,
+  "type" : "string",
+  "default" : ""
+}
+        
+      ],
+      "responses": {
+        
+        "200": {
+  "description" : "success",
+  "schema" : {
+    "type" : "array",
+    "items" : {
+      "$ref" : "#/definitions/User"
+    }
+  }
+}
+        
+        
+      }
+    }
+  } ,
+  
+  "/search": {
+    "post": {
+      "x-swagger-router-controller": "Search",
+      "tags": ["Search"],
+      "operationId": "saveUser",
+      "parameters": [
+        
+        {
+  "name" : "id",
+  "in" : "query",
+  "description" : "id",
+  "required" : true,
+  "type" : "integer",
+  "default" : "",
+  "format" : "int64"
+},
+        
+        {
+  "name" : "name",
+  "in" : "query",
+  "description" : "name",
+  "required" : true,
+  "type" : "string",
+  "default" : ""
+}
+        
+      ],
+      "responses": {
+        
+        "200": {
+  "description" : "success",
+  "schema" : {
+    "$ref" : "#/definitions/User"
+  }
+}
+        
+        
+      }
+    }
+  } 
+  
+   ,
+
+
+
+  
+  "/user_with_responseentity": {
+    "get": {
+      "x-swagger-router-controller": "Userwithresponseentity",
+      "tags": ["Userwithresponseentity"],
+      "operationId": "getUserResponseEntity",
+      "parameters": [
+        
+        {
+  "name" : "id",
+  "in" : "query",
+  "description" : "id",
+  "required" : true,
+  "type" : "integer",
+  "default" : "",
+  "format" : "int64"
+}
+        
+      ],
+      "responses": {
+        
+        "404": {
+  "description" : "User has not been found",
+  "schema" : {
+    "$ref" : "#/definitions/Void"
+  }
+}
+        ,
+        
+        "200": {
+  "description" : "success",
+  "schema" : {
+    "type" : "object"
+  }
+}
+        ,
+        
+        "500": {
+  "description" : "Unexpected Error",
+  "schema" : {
+    "$ref" : "#/definitions/Void"
+  }
+}
+        
+        
+      }
+    }
+  } 
+  
+   ,
+
+
+
+  
+  "/user_complete_post_complete": {
+    "post": {
+      "x-swagger-router-controller": "Usercompletepostcomplete",
+      "tags": ["Usercompletepostcomplete"],
+      "operationId": "saveUserComplete",
+      "parameters": [
+        
+        {
+  "name" : "id",
+  "in" : "query",
+  "description" : "id",
+  "required" : true,
+  "type" : "integer",
+  "default" : "",
+  "format" : "int64"
+},
+        
+        {
+  "name" : "user",
+  "in" : "query",
+  "description" : "user",
+  "required" : true,
+  "type" : "ref",
+  "default" : ""
+}
+        
+      ],
+      "responses": {
+        
+        "200": {
+  "description" : "success",
+  "schema" : {
+    "$ref" : "#/definitions/User"
+  }
+}
+        
+        
+      }
+    }
+  } 
+  
+   
+
+
+
+  }, "definitions": {
+  "User": {
+  "properties" : {
+    "id" : {
+      "type" : "integer",
+      "format" : "int64",
+      "description" : "ID of the user"
+    },
+    "name" : {
+      "type" : "string",
+      "description" : "Name of the user"
+    },
+    "firstName" : {
+      "type" : "string",
+      "description" : "First name of the user"
+    },
+    "state" : {
+      "type" : "string",
+      "description" : "",
+      "enum" : [ "ACTIVE", "DISABLED" ]
+    },
+    "photo" : {
+      "type" : "array",
+      "description" : "demo for java.lang.Byte[]",
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "categories" : {
+      "type" : "array",
+      "description" : "demo for java.util.List",
+      "items" : {
+        "$ref" : "#/definitions/Category"
+      }
+    },
+    "locations" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/Location"
+      }
+    },
+    "primitives" : {
+      "$ref" : "#/definitions/ShowcaseDatatypePrimitives"
+    },
+    "math" : {
+      "$ref" : "#/definitions/ShowcaseDatatypeMath"
+    },
+    "date" : {
+      "$ref" : "#/definitions/ShowcaseDatatypeDate"
+    },
+    "createTimestamp" : {
+      "type" : "string",
+      "format" : "date-time",
+      "description" : "created"
+    },
+    "modifyTimestamp" : {
+      "type" : "string",
+      "format" : "date-time",
+      "description" : "last modified"
+    }
+  },
+  "description" : "User object"
+},"ShowcaseDatatypePrimitives": {
+  "properties" : {
+    "singleByte" : {
+      "type" : "string"
+    },
+    "tinyNumber" : {
+      "type" : "integer",
+      "format" : "int32"
+    },
+    "counter" : {
+      "type" : "integer",
+      "format" : "int32"
+    },
+    "id" : {
+      "type" : "integer",
+      "format" : "int64"
+    },
+    "budgetFloat" : {
+      "type" : "integer",
+      "format" : "int64"
+    },
+    "budget" : {
+      "type" : "number",
+      "format" : "double"
+    },
+    "deleted" : {
+      "type" : "boolean",
+      "default" : false
+    },
+    "singleCharacter" : {
+      "type" : "string"
+    }
+  },
+  "description" : ""
+},"Category": {
+  "properties" : {
+    "id" : {
+      "type" : "integer",
+      "format" : "int64"
+    },
+    "name" : {
+      "type" : "string"
+    }
+  },
+  "description" : "Category object"
+},"ShowcaseDatatypeDate": {
+  "properties" : {
+    "date" : {
+      "type" : "string",
+      "format" : "date-time"
+    }
+  },
+  "description" : ""
+},"ShowcaseDatatypeMath": {
+  "properties" : {
+    "bigInteger" : {
+      "type" : "integer",
+      "format" : "int64"
+    },
+    "bigDecimal" : {
+      "type" : "number",
+      "format" : "double"
+    }
+  },
+  "description" : ""
+},"Location": {
+  "properties" : {
+    "street" : {
+      "type" : "string"
+    },
+    "zip" : {
+      "type" : "string"
+    },
+    "city" : {
+      "type" : "string"
+    },
+    "country" : {
+      "type" : "string"
+    },
+    "latitude" : {
+      "type" : "number",
+      "format" : "double",
+      "description" : "demo for java.math.BigDecimal"
+    },
+    "longitude" : {
+      "type" : "number",
+      "format" : "double",
+      "description" : "demo for java.lang.Double"
+    }
+  },
+  "description" : "Location object"
+}
+  }
+}

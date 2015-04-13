@@ -1,0 +1,15 @@
+{
+  "name": "",
+  "version": "1.0",
+  "description": "based on 1.0.2, shows CRUD operations and datatype conversions",
+  "main": "index.js",
+  "keywords": [
+    "swagger"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "connect": "^3.2.0",
+    "swagger-tools": "0.8.*"
+  }
+}
