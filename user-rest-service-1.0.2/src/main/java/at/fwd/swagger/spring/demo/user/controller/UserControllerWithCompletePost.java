@@ -5,9 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import at.fwd.swagger.spring.demo.user.exception.ObjectNotFoundException;
+import at.fwd.swagger.spring.demo.user.model.Category;
 import at.fwd.swagger.spring.demo.user.model.User;
 
 import com.wordnik.swagger.annotations.Api;
@@ -43,8 +45,9 @@ public class UserControllerWithCompletePost {
     @ApiOperation(value="create or update a user name by id", position = 1)
     @ApiResponses(value = {
     	    @ApiResponse(code = 200, message = MESSAGE_POST_SUCCESS, response = User.class) })
-    public User saveUserComplete(@RequestBody User user) {
-    	
+    public User saveUserComplete( @RequestBody User user) {
+    	log.debug("user: " + user);
+    	log.debug("user.name: " + user.getName());
     	if (user!=null) {
     		userController.getUserMap().put(user.getId(),  user);
 
