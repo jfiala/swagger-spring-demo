@@ -30,10 +30,10 @@ class SwaggerApp extends Swagger(apiInfo = ApiSwagger.apiInfo, apiVersion = "1.0
 
 object ApiSwagger {
   val apiInfo = ApiInfo(
-    """Spring SwaggerMvc demo application""",
-    """based on 1.0.2, shows CRUD operations and datatype conversions""",
-    """My Apps API Contact Email""",
+    """default Title""",
+    """Api Description""",
+    """Contact Email""",
     """hello@helloreverb.com""",
-    """My Apps API Licence Type""",
-    """My Apps API License URL""")
+    """Licence Type""",
+    """License URL""")
 }

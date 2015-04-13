@@ -5,8 +5,6 @@ using io.swagger.Model;
 
 
 
-
-
 namespace io.swagger.Api {
   
   public class UsercompletepostcompleteApi {
@@ -37,11 +35,10 @@ namespace io.swagger.Api {
     /// <summary>
     /// create or update a user name by id saveUserComplete
     /// </summary>
-    /// <param name="Id">id</param>
-     /// <param name="User">user</param>
+    /// <param name="Body">user</param>
     
     /// <returns></returns>
-    public User  saveUserComplete (long? Id, string User) {
+    public User  saveUserComplete (User Body) {
       // create path and map variables
       var path = "/user_complete_post_complete".Replace("{format}","json");
 
@@ -52,12 +49,6 @@ namespace io.swagger.Api {
 
       
 
-      if (Id != null){
-        queryParams.Add("id", apiInvoker.ParameterToString(Id));
-      }
-      if (User != null){
-        queryParams.Add("user", apiInvoker.ParameterToString(User));
-      }
       
 
       
@@ -73,7 +64,7 @@ namespace io.swagger.Api {
           
         } else {
           
-          var response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, null, headerParams, formParams);
+          var response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, Body, headerParams, formParams);
           if (response != null){
              return (User) ApiInvoker.deserialize(response, typeof(User));
           }

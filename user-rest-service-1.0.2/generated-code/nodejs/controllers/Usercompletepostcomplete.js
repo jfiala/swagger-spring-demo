@@ -9,11 +9,10 @@ var Usercompletepostcomplete = require('./UsercompletepostcompleteService');
 
 
 module.exports.saveUserComplete = function saveUserComplete (req, res, next) {
-  var id = req.swagger.params['id'].value;
-  var user = req.swagger.params['user'].value;
+  var body = req.swagger.params['body'].value;
   
 
-  var result = Usercompletepostcomplete.saveUserComplete(id, user);
+  var result = Usercompletepostcomplete.saveUserComplete(body);
 
   if(typeof result !== 'undefined') {
     res.setHeader('Content-Type', 'application/json');

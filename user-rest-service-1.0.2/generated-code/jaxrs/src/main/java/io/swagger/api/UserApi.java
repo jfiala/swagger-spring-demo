@@ -33,7 +33,11 @@ public class UserApi {
   @com.wordnik.swagger.annotations.ApiResponses(value = { 
     @com.wordnik.swagger.annotations.ApiResponse(code = 404, message = "User not found"),
     
-    @com.wordnik.swagger.annotations.ApiResponse(code = 200, message = "success") })
+    @com.wordnik.swagger.annotations.ApiResponse(code = 200, message = "success"),
+    
+    @com.wordnik.swagger.annotations.ApiResponse(code = 401, message = "Unauthorized"),
+    
+    @com.wordnik.swagger.annotations.ApiResponse(code = 403, message = "Forbidden") })
 
   public Response getUser(@ApiParam(value = "id",required=true) @QueryParam("id") Long id)
       throws NotFoundException {
@@ -48,7 +52,15 @@ public class UserApi {
   @Produces({ "*/*" })
   @com.wordnik.swagger.annotations.ApiOperation(value = "create or update a user name by id", notes = "saveUser", response = User.class)
   @com.wordnik.swagger.annotations.ApiResponses(value = { 
-    @com.wordnik.swagger.annotations.ApiResponse(code = 200, message = "success") })
+    @com.wordnik.swagger.annotations.ApiResponse(code = 404, message = "Not Found"),
+    
+    @com.wordnik.swagger.annotations.ApiResponse(code = 200, message = "success"),
+    
+    @com.wordnik.swagger.annotations.ApiResponse(code = 201, message = "Created"),
+    
+    @com.wordnik.swagger.annotations.ApiResponse(code = 401, message = "Unauthorized"),
+    
+    @com.wordnik.swagger.annotations.ApiResponse(code = 403, message = "Forbidden") })
 
   public Response saveUser(@ApiParam(value = "id",required=true) @QueryParam("id") Long id,
     @ApiParam(value = "name",required=true) @QueryParam("name") String name)

@@ -40,8 +40,8 @@ public class UsercompletepostcompleteApi {
 
   
   
-  public User  saveUserComplete (Long id, String user) throws ApiException {
-    Object postBody = null;
+  public User  saveUserComplete (User body) throws ApiException {
+    Object postBody = body;
 
     
 
@@ -55,10 +55,6 @@ public class UsercompletepostcompleteApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if (id != null)
-      queryParams.put("id", ApiInvoker.parameterToString(id));
-    if (user != null)
-      queryParams.put("user", ApiInvoker.parameterToString(user));
     
 
     

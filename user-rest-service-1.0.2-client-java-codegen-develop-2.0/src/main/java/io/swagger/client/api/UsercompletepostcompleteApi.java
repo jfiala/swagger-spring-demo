@@ -40,12 +40,11 @@ public class UsercompletepostcompleteApi {
   /**
    * create or update a user name by id
    * saveUserComplete
-   * @param id id
-   * @param user user
+   * @param body user
    * @return User
    */
-  public User saveUserComplete (Long id, String user) throws ApiException {
-    Object postBody = null;
+  public User saveUserComplete (User body) throws ApiException {
+    Object postBody = body;
     
 
     // create path and map variables
@@ -56,10 +55,6 @@ public class UsercompletepostcompleteApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if (id != null)
-      queryParams.put("id", ApiInvoker.parameterToString(id));
-    if (user != null)
-      queryParams.put("user", ApiInvoker.parameterToString(user));
     
     
     String[] contentTypes = {

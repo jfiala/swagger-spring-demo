@@ -19,14 +19,17 @@ class UsercompletepostcompleteApi(val defBasePath: String = "http://localhost/",
   def addHeader(key: String, value: String) = apiInvoker.defaultHeaders += key -> value 
 
   
-  def saveUserComplete (id: Long, user: String) : Option[User] = {
+  def saveUserComplete (body: User) : Option[User] = {
     // create path and map variables
     val path = "/user_complete_post_complete".replaceAll("\\{format\\}","json")
 
     
     val contentType = {
+      if(body != null && body.isInstanceOf[File] )
+        "multipart/form-data"
+      else "application/json"
       
-      "application/json"
+      
     }
 
     // query params
@@ -35,14 +38,12 @@ class UsercompletepostcompleteApi(val defBasePath: String = "http://localhost/",
 
     
 
-    if(String.valueOf(id) != "null") queryParams += "id" -> id.toString
-    if(String.valueOf(user) != "null") queryParams += "user" -> user.toString
     
     
     
 
     try {
-      apiInvoker.invokeApi(basePath, path, "POST", queryParams.toMap, None, headerParams.toMap, contentType) match {
+      apiInvoker.invokeApi(basePath, path, "POST", queryParams.toMap, body, headerParams.toMap, contentType) match {
         case s: String =>
            Some(ApiInvoker.deserialize(s, "", classOf[User]).asInstanceOf[User])
          

@@ -54,7 +54,7 @@ saveUserCompleteProcessor(HttpResponse* pHttpResponse, void (* handler)(void*, S
 }
 
 SamiUser* 
-SamiUsercompletepostcompleteApi::saveUserCompleteWithCompletion(Long* _id, String* user, void (* success)(SamiUser*, SamiError*)) {
+SamiUsercompletepostcompleteApi::saveUserCompleteWithCompletion(SamiUser* body, void (* success)(SamiUser*, SamiError*)) {
   client = new SamiApiClient();
 
   client->success(&saveUserCompleteProcessor, (void(*)(void*, SamiError*))success);
@@ -67,15 +67,17 @@ SamiUsercompletepostcompleteApi::saveUserCompleteWithCompletion(Long* _id, Strin
   queryParams->Construct();
 
   
-    queryParams->Add(new String("id"), _id);
-  
-  
-    queryParams->Add(new String("user"), user);
-  
-  
 
   String* mBody = null;
 
+  
+  
+  
+  if(body != null) {
+    mBody = new String(body->asJson());
+    headerParams->Add(new String("Content-Type"), new String("application/json"));
+  }
+  
   
 
   String url(L"/user_complete_post_complete");

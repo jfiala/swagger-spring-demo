@@ -34,17 +34,10 @@ class UsercompletepostcompleteApi (implicit val swagger: Swagger) extends Scalat
   val saveUserCompleteOperation = (apiOperation[User]("saveUserComplete")
       summary "create or update a user name by id"
       parameters(
-        queryParam[Long]("id").description("")
         
         
         
-        
-        
-        ,
-        queryParam[String]("user").description("")
-        
-        
-        
+        bodyParam[User]("body").description("").optional
         
         
         
@@ -58,36 +51,16 @@ class UsercompletepostcompleteApi (implicit val swagger: Swagger) extends Scalat
     
 
     
-      
-      val id = params.getAs[Long]("id")
-      
-    
 
     
 
     
 
     
-    
-    println("id: " + id)
-  
+      val body = parsedBody.extract[User]
     
     
-    
-
-    
-      
-      val user = params.getAs[String]("user")
-      
-    
-
-    
-
-    
-
-    
-    
-    println("user: " + user)
+    println("body: " + body)
   
   }
 

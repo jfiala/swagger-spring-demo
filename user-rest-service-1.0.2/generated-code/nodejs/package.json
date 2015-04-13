@@ -1,7 +1,7 @@
 {
   "name": "",
   "version": "1.0",
-  "description": "based on 1.0.2, shows CRUD operations and datatype conversions",
+  "description": "Api Description",
   "main": "index.js",
   "keywords": [
     "swagger"

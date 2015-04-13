@@ -6,8 +6,6 @@
 #include "SamiError.h"
 
 #include "SamiUser.h"
-using Tizen::Base::Long;
-using Tizen::Base::String;
 
 
 using namespace Tizen::Net::Http;
@@ -22,7 +20,7 @@ public:
 
   
   SamiUser* 
-  saveUserCompleteWithCompletion(Long* _id, String* user, void (* handler)(SamiUser*, SamiError*));
+  saveUserCompleteWithCompletion(SamiUser* body, void (* handler)(SamiUser*, SamiError*));
   
   static String getBasePath() {
     return L"http://localhost/";

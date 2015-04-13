@@ -1,40 +1,47 @@
 package at.fwd.swagger.spring.demo.user;
 
-
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 import io.swagger.client.ApiException;
-import io.swagger.client.api.UserApi;
 import io.swagger.client.api.UsercompletepostcompleteApi;
-import io.swagger.client.model.ShowcaseDatatypePrimitives;
 import io.swagger.client.model.User;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.util.logging.Logger;
 
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.BlockJUnit4ClassRunner;
 
 public class UserCompletePostApi_post_Test extends AbstractTestCase {
+	/**
+	 * Logger for this class
+	 */
+	private static final Logger log = Logger.getLogger(UserCompletePostApi_post_Test.class.getName());
 	
 	@Test
 	public void testSuccess() throws ParseException {
 		
-//		try {
+		try {
 			UsercompletepostcompleteApi api = new UsercompletepostcompleteApi();
 			api.setBasePath("http://localhost:8080/");
 			
-			User user = new User();
-			user.setName("Test Post");
-			// TODO: 
-			//api.saveUserComplete(new Long(2), user);
+			Long id = new Long(2);
+			String name = "Test Post";
 			
-//		} catch (ApiException e) {
-//			e.printStackTrace();
-//			fail(e.getMessage());
-//		}
+			User user = new User();
+			user.setId(id);
+			user.setName(name);
+			
+			User response = api.saveUserComplete(user);
+			
+			log.info("user response: " + response);
+			
+			assertEquals(id, response.getId());
+			assertEquals(name, response.getName());
+			
+		} catch (ApiException e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
 		
 	}
 	

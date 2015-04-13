@@ -54,8 +54,7 @@ static NSString * basePath = @"http://localhost/";
 
 
 
--(NSNumber*) saveUserCompleteWithCompletionBlock: (NSNumber*) _id
-         user: (NSString*) user
+-(NSNumber*) saveUserCompleteWithCompletionBlock: (SWGUser*) body
         
         completionHandler: (void (^)(SWGUser* output, NSError* error))completionBlock
          {
@@ -75,24 +74,39 @@ static NSString * basePath = @"http://localhost/";
     NSString* responseContentType = [responseContentTypes count] > 0 ? responseContentTypes[0] : @"application/json";
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if(_id != nil) {
-        
-        queryParams[@"id"] = _id;
-    }
-    if(user != nil) {
-        
-        queryParams[@"user"] = user;
-    }
     
     NSMutableDictionary* headerParams = [[NSMutableDictionary alloc] init];
     
 
     id bodyDictionary = nil;
     
-    
+    id __body = body;
 
-    NSMutableDictionary * formParams = [[NSMutableDictionary alloc]init];
-
+    if(__body != nil && [__body isKindOfClass:[NSArray class]]){
+        NSMutableArray * objs = [[NSMutableArray alloc] init];
+        for (id dict in (NSArray*)__body) {
+            if([dict respondsToSelector:@selector(toDictionary)]) {
+                [objs addObject:[(SWGObject*)dict toDictionary]];
+            }
+            else{
+                [objs addObject:dict];
+            }
+        }
+        bodyDictionary = objs;
+    }
+    else if([__body respondsToSelector:@selector(toDictionary)]) {
+        bodyDictionary = [(SWGObject*)__body toDictionary];
+    }
+    else if([__body isKindOfClass:[NSString class]]) {
+        // convert it to a dictionary
+        NSError * error;
+        NSString * str = (NSString*)__body;
+        NSDictionary *JSON =
+            [NSJSONSerialization JSONObjectWithData: [str dataUsingEncoding: NSUTF8StringEncoding]
+                                            options: NSJSONReadingMutableContainers
+                                              error: &error];
+        bodyDictionary = JSON;
+    }
     
     
 

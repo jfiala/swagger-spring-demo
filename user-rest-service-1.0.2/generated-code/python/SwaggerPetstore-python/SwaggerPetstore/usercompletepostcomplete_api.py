@@ -39,17 +39,14 @@ class UsercompletepostcompleteApi(object):
 
         Args:
             
-            id, long: id (required)
-            
-            
-            user, str: user (required)
+            body, User: user (required)
             
             
         
         Returns: User
         """
 
-        allParams = ['id', 'user']
+        allParams = ['body']
 
         params = locals()
         for (key, val) in params['kwargs'].iteritems():
@@ -72,12 +69,6 @@ class UsercompletepostcompleteApi(object):
         headerParams['Content-Type'] = 'application/json,'
 
         
-        if ('id' in params):
-            queryParams['id'] = self.apiClient.toPathValue(params['id'])
-        
-        if ('user' in params):
-            queryParams['user'] = self.apiClient.toPathValue(params['user'])
-        
 
         
 
@@ -85,6 +76,9 @@ class UsercompletepostcompleteApi(object):
 
         
 
+        
+        if ('body' in params):
+            bodyParam = params['body']
         
 
         postData = (formParams if formParams else bodyParam)

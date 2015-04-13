@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Spring SwaggerMvc demo application",
-    "description": "based on 1.0.2, shows CRUD operations and datatype conversions",
+    "title": "default Title",
+    "description": "Api Description",
     "version": "1.0.0"
   },
 
@@ -47,6 +47,16 @@
     "$ref" : "#/definitions/User"
   }
 }
+        ,
+        
+        "401": {
+  "description" : "Unauthorized"
+}
+        ,
+        
+        "403": {
+  "description" : "Forbidden"
+}
         
         
       }
@@ -82,11 +92,31 @@
       ],
       "responses": {
         
+        "404": {
+  "description" : "Not Found"
+}
+        ,
+        
         "200": {
   "description" : "success",
   "schema" : {
     "$ref" : "#/definitions/User"
   }
+}
+        ,
+        
+        "201": {
+  "description" : "Created"
+}
+        ,
+        
+        "401": {
+  "description" : "Unauthorized"
+}
+        ,
+        
+        "403": {
+  "description" : "Forbidden"
 }
         
         
@@ -118,6 +148,11 @@
       ],
       "responses": {
         
+        "404": {
+  "description" : "Not Found"
+}
+        ,
+        
         "200": {
   "description" : "success",
   "schema" : {
@@ -126,6 +161,16 @@
       "$ref" : "#/definitions/User"
     }
   }
+}
+        ,
+        
+        "401": {
+  "description" : "Unauthorized"
+}
+        ,
+        
+        "403": {
+  "description" : "Forbidden"
 }
         
         
@@ -162,11 +207,31 @@
       ],
       "responses": {
         
+        "404": {
+  "description" : "Not Found"
+}
+        ,
+        
         "200": {
   "description" : "success",
   "schema" : {
     "$ref" : "#/definitions/User"
   }
+}
+        ,
+        
+        "201": {
+  "description" : "Created"
+}
+        ,
+        
+        "401": {
+  "description" : "Unauthorized"
+}
+        ,
+        
+        "403": {
+  "description" : "Forbidden"
 }
         
         
@@ -215,6 +280,16 @@
 }
         ,
         
+        "401": {
+  "description" : "Unauthorized"
+}
+        ,
+        
+        "403": {
+  "description" : "Forbidden"
+}
+        ,
+        
         "500": {
   "description" : "Unexpected Error",
   "schema" : {
@@ -240,32 +315,43 @@
       "parameters": [
         
         {
-  "name" : "id",
-  "in" : "query",
-  "description" : "id",
-  "required" : true,
-  "type" : "integer",
-  "default" : "",
-  "format" : "int64"
-},
-        
-        {
-  "name" : "user",
-  "in" : "query",
+  "in" : "body",
+  "name" : "body",
   "description" : "user",
-  "required" : true,
-  "type" : "ref",
-  "default" : ""
+  "required" : false,
+  "schema" : {
+    "$ref" : "#/definitions/User"
+  }
 }
         
       ],
       "responses": {
+        
+        "404": {
+  "description" : "Not Found"
+}
+        ,
         
         "200": {
   "description" : "success",
   "schema" : {
     "$ref" : "#/definitions/User"
   }
+}
+        ,
+        
+        "201": {
+  "description" : "Created"
+}
+        ,
+        
+        "401": {
+  "description" : "Unauthorized"
+}
+        ,
+        
+        "403": {
+  "description" : "Forbidden"
 }
         
         

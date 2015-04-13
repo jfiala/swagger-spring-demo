@@ -35,6 +35,10 @@ public class User_with_responseentityApi {
     
     @com.wordnik.swagger.annotations.ApiResponse(code = 200, message = "success"),
     
+    @com.wordnik.swagger.annotations.ApiResponse(code = 401, message = "Unauthorized"),
+    
+    @com.wordnik.swagger.annotations.ApiResponse(code = 403, message = "Forbidden"),
+    
     @com.wordnik.swagger.annotations.ApiResponse(code = 500, message = "Unexpected Error") })
 
   public Response getUserResponseEntity(@ApiParam(value = "id",required=true) @QueryParam("id") Long id)

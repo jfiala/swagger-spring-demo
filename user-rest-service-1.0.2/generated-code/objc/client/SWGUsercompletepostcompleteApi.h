@@ -18,14 +18,12 @@
  create or update a user name by id
  saveUserComplete
 
- @param _id id
- @param user user
+ @param body user
  
 
  return type: SWGUser*
  */
--(NSNumber*) saveUserCompleteWithCompletionBlock :(NSNumber*) _id 
-     user:(NSString*) user 
+-(NSNumber*) saveUserCompleteWithCompletionBlock :(SWGUser*) body 
     
     completionHandler: (void (^)(SWGUser* output, NSError* error))completionBlock;
     

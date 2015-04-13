@@ -11,8 +11,7 @@ import collection.mutable
 class UsercompletepostcompleteApi(client: TransportClient, config: SwaggerConfig) extends ApiClient(client, config) {
 
   
-  def saveUserComplete(id: Long,
-      user: String)(implicit reader: ClientResponseReader[User]): Future[User] = {
+  def saveUserComplete(body: User)(implicit reader: ClientResponseReader[User], writer: RequestWriter[User]): Future[User] = {
     // create path and map variables
     val path = (addFmt("/user_complete_post_complete"))
 
@@ -23,12 +22,10 @@ class UsercompletepostcompleteApi(client: TransportClient, config: SwaggerConfig
     
 
     
-    if(id != null)   queryParams += "id" -> id.toString
-    if(user != null)   queryParams += "user" -> user.toString
 
     
 
-    val resFuture = client.submit("POST", path, queryParams.toMap, headerParams.toMap, "")
+    val resFuture = client.submit("POST", path, queryParams.toMap, headerParams.toMap, writer.write(body))
     resFuture flatMap { resp =>
       process(reader.read(resp))
     }

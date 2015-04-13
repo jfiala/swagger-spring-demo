@@ -2,7 +2,7 @@
 
 
 
-exports.saveUserComplete = function(id, user) {
+exports.saveUserComplete = function(body) {
 
   var examples = {};
   

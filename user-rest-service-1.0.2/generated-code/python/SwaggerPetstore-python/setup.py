@@ -17,15 +17,15 @@ REQUIRES = []
 setup(
     name="SwaggerPetstore",
     version="1.0",
-    description="Spring SwaggerMvc demo application",
+    description="default Title",
     author_email="",
-    url="My Apps API Contact Email",
-    keywords=["Swagger", "Spring SwaggerMvc demo application"],
+    url="Contact Email",
+    keywords=["Swagger", "default Title"],
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,
     long_description="""\
-    based on 1.0.2, shows CRUD operations and datatype conversions
+    Api Description
     """
 )
 

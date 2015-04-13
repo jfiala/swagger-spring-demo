@@ -9,19 +9,17 @@ class UsercompletepostcompleteApi
 
   # create or update a user name by id
   # saveUserComplete
-  # @param id id
-  # @param user user
+  # @param body user
   # @return User
-  def self.saveUserComplete (id, user, opts={})
-    query_param_keys = [:id,:user]
+  def self.saveUserComplete (body, opts={})
+    query_param_keys = []
     headerParams = {}
 
     
     
     # set default values and merge with input
     options = {
-      :'id' => id,
-      :'user' => user
+      :'body' => body
       
     }.merge(opts)
 
@@ -47,6 +45,26 @@ class UsercompletepostcompleteApi
     
     # http body (model)
     post_body = nil
+    
+    if body != nil
+      if body.is_a?(Array)
+        array = Array.new
+        body.each do |item|
+          if item.respond_to?("to_body".to_sym)
+            array.push item.to_body
+          else
+            array.push item
+          end
+        end
+        post_body = array
+      else 
+        if body.respond_to?("to_body".to_sym)
+          post_body = body.to_body
+        else
+          post_body = body
+        end
+      end
+    end
     
     # form parameters
     form_parameter_hash = {}

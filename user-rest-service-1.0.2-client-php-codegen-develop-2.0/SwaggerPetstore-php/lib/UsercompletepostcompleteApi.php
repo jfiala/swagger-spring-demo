@@ -35,11 +35,10 @@ class UsercompletepostcompleteApi {
    *
    * create or update a user name by id
    *
-   * @param int $id id (required)
-   * @param string $user user (required)
+   * @param User $body user (required)
    * @return User
    */
-   public function saveUserComplete($id, $user) {
+   public function saveUserComplete($body) {
 
       // parse inputs
       $resourcePath = "/user_complete_post_complete";
@@ -56,17 +55,15 @@ class UsercompletepostcompleteApi {
       $_header_content_type = array('application/json',);
       $headerParams['Content-Type'] = count($_header_content_type) > 0 ? $_header_content_type[0] : 'application/json';
 
-      // query params
-      if($id !== null) {
-        $queryParams['id'] = $this->apiClient->toQueryValue($id);
-      }// query params
-      if($user !== null) {
-        $queryParams['user'] = $this->apiClient->toQueryValue($user);
+      
+      
+      
+      
+      // body params
+      $body = null;
+      if (isset($body)) {
+        $body = $body;
       }
-      
-      
-      
-      
 
       // for model (json/xml)
       if (isset($body)) {

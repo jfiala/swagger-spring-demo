@@ -31,10 +31,17 @@ public class User_complete_post_completeApi {
   @Produces({ "*/*" })
   @com.wordnik.swagger.annotations.ApiOperation(value = "create or update a user name by id", notes = "saveUserComplete", response = User.class)
   @com.wordnik.swagger.annotations.ApiResponses(value = { 
-    @com.wordnik.swagger.annotations.ApiResponse(code = 200, message = "success") })
+    @com.wordnik.swagger.annotations.ApiResponse(code = 404, message = "Not Found"),
+    
+    @com.wordnik.swagger.annotations.ApiResponse(code = 200, message = "success"),
+    
+    @com.wordnik.swagger.annotations.ApiResponse(code = 201, message = "Created"),
+    
+    @com.wordnik.swagger.annotations.ApiResponse(code = 401, message = "Unauthorized"),
+    
+    @com.wordnik.swagger.annotations.ApiResponse(code = 403, message = "Forbidden") })
 
-  public Response saveUserComplete(@ApiParam(value = "id",required=true) @QueryParam("id") Long id,
-    @ApiParam(value = "user",required=true) @QueryParam("user") String user)
+  public Response saveUserComplete(@ApiParam(value = "user"  ) User body)
       throws NotFoundException {
       // do some magic!
       return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
