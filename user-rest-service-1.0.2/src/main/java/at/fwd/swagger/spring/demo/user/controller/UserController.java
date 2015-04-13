@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -102,10 +104,14 @@ public class UserController {
 		
 		ShowcaseDatatypeDate showcaseDate = new ShowcaseDatatypeDate();
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
-		showcaseDate.setDate(format.parse("2015-04-12 16:47:12.123"));
-		log.info("date: " + showcaseDate.getDate());
+		Date date = format.parse("2015-04-12 16:47:12.123");
+		showcaseDate.setDate(date);
+		log.debug("date: " + showcaseDate.getDate());
 		
-		// TODO: date.setCalendar(Calendar.getInstance());
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(date);
+		showcaseDate.setCalendar(calendar);
+		
 		firstUser.setDate(showcaseDate);
 		
 		userMap.put(firstUser.getId(), firstUser);

@@ -1,7 +1,6 @@
 package io.swagger.client.model;
 
 import java.util.Date;
-import io.swagger.client.model.Calendar;
 
 
 import com.wordnik.swagger.annotations.*;
@@ -12,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @ApiModel(description = "")
 public class ShowcaseDatatypeDate  {
   
-  private Calendar calendar = null;
+  private Long calendar = null;
   private Date date = null;
 
   
@@ -20,10 +19,10 @@ public class ShowcaseDatatypeDate  {
    **/
   @ApiModelProperty(value = "")
   @JsonProperty("calendar")
-  public Calendar getCalendar() {
+  public Long getCalendar() {
     return calendar;
   }
-  public void setCalendar(Calendar calendar) {
+  public void setCalendar(Long calendar) {
     this.calendar = calendar;
   }
 

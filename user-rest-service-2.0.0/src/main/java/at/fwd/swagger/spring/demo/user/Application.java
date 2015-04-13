@@ -43,7 +43,9 @@ public class Application {
                 //.apis(not(withClassAnnotation(CustomIgnore.class)) //Selection by RequestHandler
                 //.paths(paths()) // and by paths
                 .build()
-              .apiInfo(apiInfo());
+              .apiInfo(apiInfo())
+              .directModelSubstitute(java.util.Calendar.class, Long.class);
+      
               //.securitySchemes(securitySchemes())
               //.securityContext(securityContext());
     }

@@ -2,7 +2,8 @@ package at.fwd.swagger.spring.demo.user.model.showcase;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
+
+import com.wordnik.swagger.annotations.ApiModelProperty;
 
 /**
  * Datatype to demo all Java primitives
@@ -13,8 +14,7 @@ public class ShowcaseDatatypeDate {
 
 	private Date date;
 	
-	// TODO Swagger-Springfox-1.0.2: Calendar not working here
-	//private Calendar calendar;
+	private Calendar calendar;
 	
 	public Date getDate() {
 		return date;
@@ -23,14 +23,14 @@ public class ShowcaseDatatypeDate {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-//
-//	public Calendar getCalendar() {
-//		return calendar;
-//	}
-//
-//	public void setCalendar(Calendar calendar) {
-//		this.calendar = calendar;
-//	}
+
+	public Calendar getCalendar() {
+		return calendar;
+	}
+
+	public void setCalendar(Calendar calendar) {
+		this.calendar = calendar;
+	}
 
 	
 	

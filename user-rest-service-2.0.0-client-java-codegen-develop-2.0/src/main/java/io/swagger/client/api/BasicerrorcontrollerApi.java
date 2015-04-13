@@ -7,7 +7,7 @@ import io.swagger.client.model.*;
 
 import java.util.*;
 
-import io.swagger.client.model.ModelAndView;
+import java.util.Map;
 
 
 import com.sun.jersey.multipart.FormDataMultiPart;
@@ -38,11 +38,11 @@ public class BasicerrorcontrollerApi {
 
   
   /**
-   * errorHtml
-   * errorHtml
-   * @return ModelAndView
+   * error
+   * error
+   * @return Map<String, Object>
    */
-  public ModelAndView errorGet () throws ApiException {
+  public Map<String, Object> errorGet () throws ApiException {
     Object postBody = null;
     
 
@@ -76,7 +76,7 @@ public class BasicerrorcontrollerApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (ModelAndView) ApiInvoker.deserialize(response, "", ModelAndView.class);
+        return (Map<String, Object>) ApiInvoker.deserialize(response, "map", Map.class);
       }
       else {
         return null;
@@ -87,11 +87,11 @@ public class BasicerrorcontrollerApi {
   }
   
   /**
-   * errorHtml
-   * errorHtml
-   * @return ModelAndView
+   * error
+   * error
+   * @return Map<String, Object>
    */
-  public ModelAndView errorPut () throws ApiException {
+  public Map<String, Object> errorPut () throws ApiException {
     Object postBody = null;
     
 
@@ -125,7 +125,7 @@ public class BasicerrorcontrollerApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (ModelAndView) ApiInvoker.deserialize(response, "", ModelAndView.class);
+        return (Map<String, Object>) ApiInvoker.deserialize(response, "map", Map.class);
       }
       else {
         return null;
@@ -136,11 +136,11 @@ public class BasicerrorcontrollerApi {
   }
   
   /**
-   * errorHtml
-   * errorHtml
-   * @return ModelAndView
+   * error
+   * error
+   * @return Map<String, Object>
    */
-  public ModelAndView errorPost () throws ApiException {
+  public Map<String, Object> errorPost () throws ApiException {
     Object postBody = null;
     
 
@@ -174,7 +174,7 @@ public class BasicerrorcontrollerApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (ModelAndView) ApiInvoker.deserialize(response, "", ModelAndView.class);
+        return (Map<String, Object>) ApiInvoker.deserialize(response, "map", Map.class);
       }
       else {
         return null;
@@ -185,11 +185,11 @@ public class BasicerrorcontrollerApi {
   }
   
   /**
-   * errorHtml
-   * errorHtml
-   * @return ModelAndView
+   * error
+   * error
+   * @return Map<String, Object>
    */
-  public ModelAndView errorDelete () throws ApiException {
+  public Map<String, Object> errorDelete () throws ApiException {
     Object postBody = null;
     
 
@@ -223,7 +223,7 @@ public class BasicerrorcontrollerApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (ModelAndView) ApiInvoker.deserialize(response, "", ModelAndView.class);
+        return (Map<String, Object>) ApiInvoker.deserialize(response, "map", Map.class);
       }
       else {
         return null;
@@ -234,11 +234,11 @@ public class BasicerrorcontrollerApi {
   }
   
   /**
-   * errorHtml
-   * errorHtml
-   * @return ModelAndView
+   * error
+   * error
+   * @return Map<String, Object>
    */
-  public ModelAndView errorPatch () throws ApiException {
+  public Map<String, Object> errorPatch () throws ApiException {
     Object postBody = null;
     
 
@@ -272,7 +272,7 @@ public class BasicerrorcontrollerApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "PATCH", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (ModelAndView) ApiInvoker.deserialize(response, "", ModelAndView.class);
+        return (Map<String, Object>) ApiInvoker.deserialize(response, "map", Map.class);
       }
       else {
         return null;
@@ -283,11 +283,11 @@ public class BasicerrorcontrollerApi {
   }
   
   /**
-   * errorHtml
-   * errorHtml
-   * @return ModelAndView
+   * error
+   * error
+   * @return Map<String, Object>
    */
-  public ModelAndView errorOptions () throws ApiException {
+  public Map<String, Object> errorOptions () throws ApiException {
     Object postBody = null;
     
 
@@ -321,7 +321,7 @@ public class BasicerrorcontrollerApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "OPTIONS", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (ModelAndView) ApiInvoker.deserialize(response, "", ModelAndView.class);
+        return (Map<String, Object>) ApiInvoker.deserialize(response, "map", Map.class);
       }
       else {
         return null;

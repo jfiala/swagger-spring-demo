@@ -34,7 +34,8 @@ public class CustomJavaPluginConfig {
 	   public SwaggerSpringMvcPlugin customImplementation(){
 	      return new SwaggerSpringMvcPlugin(this.springSwaggerConfig)
 	            .apiInfo(apiInfo())
-	            .includePatterns(".*").useDefaultResponseMessages(false);
+	            .includePatterns(".*").useDefaultResponseMessages(false)
+	            .directModelSubstitute(java.util.Calendar.class, Long.class);
 	            
 	   }
 

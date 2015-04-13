@@ -13,7 +13,6 @@ public class ShowcaseDatatypeDate {
 
 	private Date date;
 	
-	// TODO Swagger-Springfox-1.0.2: Calendar not working here
 	private Calendar calendar;
 	
 	public Date getDate() {

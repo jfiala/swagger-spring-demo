@@ -1,6 +1,8 @@
 package at.fwd.swagger.spring.demo.user;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 import io.swagger.client.ApiException;
 import io.swagger.client.api.UserApi;
 import io.swagger.client.model.ShowcaseDatatypePrimitives;
@@ -8,6 +10,7 @@ import io.swagger.client.model.User;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -70,8 +73,8 @@ public class UserApi_get_Test extends AbstractTestCase {
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 			assertEquals(format.parse("2015-04-12 16:47:12.123"), user.getDate().getDate());
 			
-			// TODO Swagger-Springfox-1.0.2: Calendar not working here
-			//user.getDate().getCalendar();
+			Date date = format.parse("2015-04-12 16:47:12.123");
+			assertEquals(Long.valueOf(date.getTime()), user.getDate().getCalendar());
 			
 		} catch (ApiException e) {
 			e.printStackTrace();

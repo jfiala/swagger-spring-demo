@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class ShowcaseDatatypeDate  {
   
   private Date date = null;
+  private Long calendar = null;
 
   
   /**
@@ -29,6 +30,18 @@ public class ShowcaseDatatypeDate  {
   }
 
   
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  @JsonProperty("calendar")
+  public Long getCalendar() {
+    return calendar;
+  }
+  public void setCalendar(Long calendar) {
+    this.calendar = calendar;
+  }
+
+  
 
   @Override
   public String toString()  {
@@ -36,6 +49,7 @@ public class ShowcaseDatatypeDate  {
     sb.append("class ShowcaseDatatypeDate {\n");
     
     sb.append("  date: ").append(date).append("\n");
+    sb.append("  calendar: ").append(calendar).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
