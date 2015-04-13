@@ -20,7 +20,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 
-public class UsercrudcompletepostApi {
+public class SearchservicesApi {
   String basePath = "https://localhost:8080/";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
@@ -38,23 +38,25 @@ public class UsercrudcompletepostApi {
 
   
   /**
-   * create or update a user name by id
-   * saveUserComplete
-   * @param body user
-   * @return User
+   * search for users by name-part
+   * search for users
+   * @param query query
+   * @return List<User>
    */
-  public User user_complete_post_completePost (User body) throws ApiException {
-    Object postBody = body;
+  public List<User> searchGet (String query) throws ApiException {
+    Object postBody = null;
     
 
     // create path and map variables
-    String path = "/user_complete_post_complete".replaceAll("\\{format\\}","json");
+    String path = "/search".replaceAll("\\{format\\}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
+    if (query != null)
+      queryParams.put("query", ApiInvoker.parameterToString(query));
     
     
     String[] contentTypes = {
@@ -75,9 +77,9 @@ public class UsercrudcompletepostApi {
     }
 
     try {
-      String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType);
+      String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (User) ApiInvoker.deserialize(response, "", User.class);
+        return (List<User>) ApiInvoker.deserialize(response, "array", User.class);
       }
       else {
         return null;

@@ -20,7 +20,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 
-public class UsercrudcompletepostApi {
+public class UsercrudApi {
   String basePath = "https://localhost:8080/";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
@@ -38,23 +38,80 @@ public class UsercrudcompletepostApi {
 
   
   /**
-   * create or update a user name by id
-   * saveUserComplete
-   * @param body user
+   * read User by ID
+   * pass ID to read user
+   * @param id id
    * @return User
    */
-  public User user_complete_post_completePost (User body) throws ApiException {
-    Object postBody = body;
+  public User userGet (Long id) throws ApiException {
+    Object postBody = null;
     
 
     // create path and map variables
-    String path = "/user_complete_post_complete".replaceAll("\\{format\\}","json");
+    String path = "/user".replaceAll("\\{format\\}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
+    if (id != null)
+      queryParams.put("id", ApiInvoker.parameterToString(id));
+    
+    
+    String[] contentTypes = {
+      "application/json",
+    };
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if(contentType.startsWith("multipart/form-data")) {
+      boolean hasFields = false;
+      FormDataMultiPart mp = new FormDataMultiPart();
+      
+      if(hasFields)
+        postBody = mp;
+    }
+    else {
+      
+    }
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
+      if(response != null){
+        return (User) ApiInvoker.deserialize(response, "", User.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      throw ex;
+    }
+  }
+  
+  /**
+   * create or update a user name by id
+   * saveUser
+   * @param id id
+   * @param name name
+   * @return User
+   */
+  public User userPost (Long id, String name) throws ApiException {
+    Object postBody = null;
+    
+
+    // create path and map variables
+    String path = "/user".replaceAll("\\{format\\}","json");
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    if (id != null)
+      queryParams.put("id", ApiInvoker.parameterToString(id));
+    if (name != null)
+      queryParams.put("name", ApiInvoker.parameterToString(name));
     
     
     String[] contentTypes = {

@@ -21,11 +21,16 @@ public class UserCRUDCompleteApi_post_Test extends AbstractTestCase {
 			UsercrudcompletepostApi api = new UsercrudcompletepostApi();
 			api.setBasePath("http://localhost:8080/");
 			
+			Long id = new Long(2);
 			String newName =  "Test Post";
-			// TODO Swagger-Springfox-2.0.0: User POST doesn't work
-			User user = api.user_complete_post_completePost(new Long(4), newName);
+			User user = new User();
+			user.setId(id);
+			user.setName(newName);
 			
-			assertEquals(newName, user.getName());
+			User response = api.user_complete_post_completePost(user);
+			
+			assertEquals(id, response.getId());
+			assertEquals(newName, response.getName());
 			
 		} catch (ApiException e) {
 			e.printStackTrace();

@@ -7,7 +7,6 @@ import io.swagger.client.model.*;
 
 import java.util.*;
 
-import io.swagger.client.model.User;
 
 
 import com.sun.jersey.multipart.FormDataMultiPart;
@@ -20,7 +19,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 
-public class UsercrudcompletepostApi {
+public class UsercrudresponseentityApi {
   String basePath = "https://localhost:8080/";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
@@ -38,23 +37,25 @@ public class UsercrudcompletepostApi {
 
   
   /**
-   * create or update a user name by id
-   * saveUserComplete
-   * @param body user
-   * @return User
+   * getUserResponseEntity
+   * getUserResponseEntity
+   * @param id id
+   * @return Object
    */
-  public User user_complete_post_completePost (User body) throws ApiException {
-    Object postBody = body;
+  public Object user_with_responseentityGet (Long id) throws ApiException {
+    Object postBody = null;
     
 
     // create path and map variables
-    String path = "/user_complete_post_complete".replaceAll("\\{format\\}","json");
+    String path = "/user_with_responseentity".replaceAll("\\{format\\}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
+    if (id != null)
+      queryParams.put("id", ApiInvoker.parameterToString(id));
     
     
     String[] contentTypes = {
@@ -75,9 +76,9 @@ public class UsercrudcompletepostApi {
     }
 
     try {
-      String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType);
+      String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType);
       if(response != null){
-        return (User) ApiInvoker.deserialize(response, "", User.class);
+        return (Object) ApiInvoker.deserialize(response, "", Object.class);
       }
       else {
         return null;
