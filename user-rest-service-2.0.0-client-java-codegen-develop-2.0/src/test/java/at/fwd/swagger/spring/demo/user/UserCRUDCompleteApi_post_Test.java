@@ -17,20 +17,20 @@ public class UserCRUDCompleteApi_post_Test extends AbstractTestCase {
 	@Test
 	public void testSuccess() throws ParseException {
 		
-//		try {
+		try {
 			UsercrudcompletepostApi api = new UsercrudcompletepostApi();
 			api.setBasePath("http://localhost:8080/");
 			
 			String newName =  "Test Post";
 			// TODO Swagger-Springfox-2.0.0: User POST doesn't work
-			//User user = api.user_complete_post_completePost(new Long(4), newName);
+			User user = api.user_complete_post_completePost(new Long(4), newName);
 			
-			//assertEquals(newName, user.getName());
+			assertEquals(newName, user.getName());
 			
-//		} catch (ApiException e) {
-//			e.printStackTrace();
-//			fail(e.getMessage());
-//		}
+		} catch (ApiException e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
 		
 	}
 	
