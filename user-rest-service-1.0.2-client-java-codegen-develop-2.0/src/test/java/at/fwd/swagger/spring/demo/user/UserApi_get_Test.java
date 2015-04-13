@@ -1,10 +1,6 @@
 package at.fwd.swagger.spring.demo.user;
 
-
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 import io.swagger.client.ApiException;
 import io.swagger.client.api.UserApi;
 import io.swagger.client.model.ShowcaseDatatypePrimitives;
@@ -15,6 +11,9 @@ import java.text.SimpleDateFormat;
 
 import org.junit.Before;
 import org.junit.Test;
+
+
+
 
 public class UserApi_get_Test extends AbstractTestCase {
 	
