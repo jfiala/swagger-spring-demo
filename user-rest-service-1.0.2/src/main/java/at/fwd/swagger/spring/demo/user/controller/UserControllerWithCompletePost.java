@@ -33,7 +33,7 @@ import com.wordnik.swagger.annotations.ApiResponses;
  *
  */
 @RestController
-@Api(value="user-complete-post", position=2, description ="User services with complete post")
+@Api(value="user-crud-complete-post", position=2, description ="User services with complete post")
 public class UserControllerWithCompletePost {
 	/**
 	 * Logger for this class

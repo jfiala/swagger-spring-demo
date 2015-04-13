@@ -2,27 +2,37 @@ package at.fwd.swagger.spring.demo.user;
 
 
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
+import static org.junit.Assert.*;
 import io.swagger.client.ApiException;
 import io.swagger.client.api.UserApi;
 import io.swagger.client.model.ShowcaseDatatypePrimitives;
 import io.swagger.client.model.User;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 import junit.framework.TestCase;
 
-public class GetUserTest extends TestCase {
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.BlockJUnit4ClassRunner;
+
+public class UserApi_get_Test extends AbstractTestCase {
 	
+	UserApi api;
 	
+	@Before
+	public void setup() {
+		api = new UserApi();
+		api.setBasePath("http://localhost:8080/");
+		
+	}
+	
+	@Test
 	public void testSuccess() throws ParseException {
 		
 		try {
-			UserApi api = new UserApi();
-			api.setBasePath("http://localhost:8080/");
-			
-			System.out.println("basepath: " + api.getBasePath());
 			
 			User user = api.getUser(new Long(1));
 			assertNotNull(user);
@@ -38,8 +48,8 @@ public class GetUserTest extends TestCase {
 			assertEquals("Category 2", user.getCategories().get(1).getName());
 
 			assertEquals(1, user.getLocations().size());
-			assertEquals(-122.40406, user.getLocations().get(0).getLongitude());
-			assertEquals(37.78199, user.getLocations().get(0).getLatitude());
+			assertEquals(Double.valueOf(-122.40406), user.getLocations().get(0).getLongitude());
+			assertEquals(Double.valueOf(37.78199), user.getLocations().get(0).getLatitude());
 
 			// Primitives
 			ShowcaseDatatypePrimitives primitives = user.getPrimitives();
@@ -51,17 +61,18 @@ public class GetUserTest extends TestCase {
 			// TODO Swagger-Springfox-1.0.2: primitive type float not working yet here
 			// TODO: assertEquals(Float.MAX_VALUE, primitives.getBudgetFloat());
 			
-			assertEquals(Double.MAX_VALUE, primitives.getBudget());
+			assertEquals(Double.valueOf(Double.MAX_VALUE), primitives.getBudget());
 			assertEquals('\uffff', (char)primitives.getSingleCharacter().charAt(0));
 			assertEquals(Boolean.FALSE, primitives.getDeleted());
 			
 			// Math
 			assertEquals(Long.MAX_VALUE, user.getMath().getBigInteger().longValue());
-			assertEquals(Double.MAX_VALUE, user.getMath().getBigDecimal().doubleValue());
+			assertEquals(Double.valueOf(Double.MAX_VALUE), Double.valueOf(user.getMath().getBigDecimal().doubleValue()));
 			
 			// Date
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 			assertEquals(format.parse("2015-04-12 16:47:12.123"), user.getDate().getDate());
+			
 			// TODO Swagger-Springfox-1.0.2: Calendar not working here
 			//user.getDate().getCalendar();
 			
@@ -72,19 +83,21 @@ public class GetUserTest extends TestCase {
 		
 	}
 	
+	@Test
 	public void testNotFound() {
 		
 		try {
 			UserApi api = new UserApi();
 			api.setBasePath("http://localhost:8080/");
 			
-			System.out.println("basepath: " + api.getBasePath());
-			
-			api.getUser(new Long(2));
+			api.getUser(new Long(3));
 			fail("should fail");
 			
 		} catch (ApiException e) {
 			assertEquals(404, e.getCode());
+			
+			// TODO Swagger-Springfox: Currently the message cannot be overridden when throwing an exception
+			assertEquals("{\"reason\":\"Object not found\",\"status\":404}", e.getMessage());
 		}
 		
 	}

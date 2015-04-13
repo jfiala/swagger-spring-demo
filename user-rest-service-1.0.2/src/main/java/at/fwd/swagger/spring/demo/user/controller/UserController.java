@@ -126,6 +126,7 @@ public class UserController {
     	if (user!=null) {
     		return user;	
     	} else {
+			// TODO: Currently the message cannot be overridden when throwing an exception
     		throw new ObjectNotFoundException(MESSAGE_NOT_FOUND + " (id=" + id + ")");
     	}
     }
