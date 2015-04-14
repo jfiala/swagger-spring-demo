@@ -25,7 +25,7 @@ import com.wordnik.swagger.annotations.ApiResponses;
  *
  */
 @RestController
-@Api(value="search-services", position=1, description="Search")
+@Api(value="search-services", position=2, description="Search")
 public class SearchController {
 	/**
 	 * Logger for this class

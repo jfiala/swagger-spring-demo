@@ -20,11 +20,11 @@ import com.mangofactory.swagger.plugin.SwaggerSpringMvcPlugin;
 @Configuration
 //@EnableWebMvc // not necessary
 @EnableSwagger
-@ComponentScan("at.fwd.swagger.spring.demo.user.controller")
+@ComponentScan(basePackages="at.fwd.swagger.spring.demo.user.controller")
 public class CustomJavaPluginConfig {
 
 	   private SpringSwaggerConfig springSwaggerConfig;
-
+ 
 	   @Autowired
 	   public void setSpringSwaggerConfig(SpringSwaggerConfig springSwaggerConfig) {
 	      this.springSwaggerConfig = springSwaggerConfig;

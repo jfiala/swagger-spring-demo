@@ -40,7 +40,7 @@ import com.wordnik.swagger.annotations.ApiResponses;
  *
  */
 @RestController
-@Api(value="user-crud", position=2, description ="User CRUD services")
+@Api(value="user-crud", position=1, description ="User CRUD services")
 public class UserController {
 	/**
 	 * Logger for this class

@@ -22,7 +22,7 @@ import com.wordnik.swagger.annotations.ApiResponses;
  *
  */
 @RestController
-@Api(value="user-get-responseentity", position=2, description="User GET with ResponseEntity")
+@Api(value="user-get-responseentity", position=3, description="User GET with ResponseEntity")
 public class UserControllerResponseEntity {
 
 	private static final String PATH = "/user_with_responseentity";
