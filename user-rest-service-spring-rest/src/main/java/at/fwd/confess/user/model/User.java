@@ -1,6 +1,5 @@
 package at.fwd.confess.user.model;
 
-import java.util.Date;
 
 public class User {
 
