@@ -2,8 +2,6 @@ package io.swagger.client.model;
 
 import io.swagger.client.model.ShowcaseDatatypePrimitives;
 import io.swagger.client.model.Category;
-import java.util.Date;
-import io.swagger.client.model.ShowcaseDatatypeDate;
 import io.swagger.client.model.ShowcaseDatatypeMath;
 import io.swagger.client.model.Location;
 import java.util.*;
@@ -32,9 +30,6 @@ public class User  {
   private List<Location> locations = new ArrayList<Location>() ;
   private ShowcaseDatatypePrimitives primitives = null;
   private ShowcaseDatatypeMath math = null;
-  private ShowcaseDatatypeDate date = null;
-  private Date createTimestamp = null;
-  private Date modifyTimestamp = null;
   private String nickname = null;
 
   
@@ -153,44 +148,6 @@ public class User  {
 
   
   /**
-   **/
-  @ApiModelProperty(value = "")
-  @JsonProperty("date")
-  public ShowcaseDatatypeDate getDate() {
-    return date;
-  }
-  public void setDate(ShowcaseDatatypeDate date) {
-    this.date = date;
-  }
-
-  
-  /**
-   * created
-   **/
-  @ApiModelProperty(value = "created")
-  @JsonProperty("createTimestamp")
-  public Date getCreateTimestamp() {
-    return createTimestamp;
-  }
-  public void setCreateTimestamp(Date createTimestamp) {
-    this.createTimestamp = createTimestamp;
-  }
-
-  
-  /**
-   * last modified
-   **/
-  @ApiModelProperty(value = "last modified")
-  @JsonProperty("modifyTimestamp")
-  public Date getModifyTimestamp() {
-    return modifyTimestamp;
-  }
-  public void setModifyTimestamp(Date modifyTimestamp) {
-    this.modifyTimestamp = modifyTimestamp;
-  }
-
-  
-  /**
    * the nickname
    **/
   @ApiModelProperty(value = "the nickname")
@@ -218,9 +175,6 @@ public class User  {
     sb.append("  locations: ").append(locations).append("\n");
     sb.append("  primitives: ").append(primitives).append("\n");
     sb.append("  math: ").append(math).append("\n");
-    sb.append("  date: ").append(date).append("\n");
-    sb.append("  createTimestamp: ").append(createTimestamp).append("\n");
-    sb.append("  modifyTimestamp: ").append(modifyTimestamp).append("\n");
     sb.append("  nickname: ").append(nickname).append("\n");
     sb.append("}\n");
     return sb.toString();

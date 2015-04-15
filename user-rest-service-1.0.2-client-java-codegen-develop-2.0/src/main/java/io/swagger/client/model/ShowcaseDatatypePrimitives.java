@@ -17,7 +17,6 @@ public class ShowcaseDatatypePrimitives  {
   private Integer tinyNumber = null;
   private Integer counter = null;
   private Long id = null;
-  private Long budgetFloat = null;
   private Double budget = null;
   private Boolean deleted = null;
   private String singleCharacter = null;
@@ -74,18 +73,6 @@ public class ShowcaseDatatypePrimitives  {
   /**
    **/
   @ApiModelProperty(value = "")
-  @JsonProperty("budgetFloat")
-  public Long getBudgetFloat() {
-    return budgetFloat;
-  }
-  public void setBudgetFloat(Long budgetFloat) {
-    this.budgetFloat = budgetFloat;
-  }
-
-  
-  /**
-   **/
-  @ApiModelProperty(value = "")
   @JsonProperty("budget")
   public Double getBudget() {
     return budget;
@@ -129,7 +116,6 @@ public class ShowcaseDatatypePrimitives  {
     sb.append("  tinyNumber: ").append(tinyNumber).append("\n");
     sb.append("  counter: ").append(counter).append("\n");
     sb.append("  id: ").append(id).append("\n");
-    sb.append("  budgetFloat: ").append(budgetFloat).append("\n");
     sb.append("  budget: ").append(budget).append("\n");
     sb.append("  deleted: ").append(deleted).append("\n");
     sb.append("  singleCharacter: ").append(singleCharacter).append("\n");
