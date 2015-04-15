@@ -3,6 +3,7 @@ package at.fwd.swagger.spring.demo.user.model.showcase;
 import java.util.Calendar;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.wordnik.swagger.annotations.ApiModelProperty;
 
 /**
@@ -12,8 +13,10 @@ import com.wordnik.swagger.annotations.ApiModelProperty;
  */
 public class ShowcaseDatatypeDate {
 
+	@JsonIgnore
 	private Date date;
 	
+	@JsonIgnore
 	private Calendar calendar;
 	
 	public Date getDate() {

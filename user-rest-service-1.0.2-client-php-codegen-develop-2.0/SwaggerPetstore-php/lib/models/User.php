@@ -39,9 +39,7 @@ class User implements ArrayAccess {
       'locations' => 'array[Location]',
       'primitives' => 'ShowcaseDatatypePrimitives',
       'math' => 'ShowcaseDatatypeMath',
-      'date' => 'ShowcaseDatatypeDate',
-      'create_timestamp' => 'DateTime',
-      'modify_timestamp' => 'DateTime'
+      'nickname' => 'string'
   );
 
   static $attributeMap = array(
@@ -54,9 +52,7 @@ class User implements ArrayAccess {
       'locations' => 'locations',
       'primitives' => 'primitives',
       'math' => 'math',
-      'date' => 'date',
-      'create_timestamp' => 'createTimestamp',
-      'modify_timestamp' => 'modifyTimestamp'
+      'nickname' => 'nickname'
   );
 
   
@@ -87,15 +83,10 @@ class User implements ArrayAccess {
   public $locations; /* array[Location] */
   public $primitives; /* ShowcaseDatatypePrimitives */
   public $math; /* ShowcaseDatatypeMath */
-  public $date; /* ShowcaseDatatypeDate */
   /**
-  * created
+  * the nickname
   */
-  public $create_timestamp; /* DateTime */
-  /**
-  * last modified
-  */
-  public $modify_timestamp; /* DateTime */
+  public $nickname; /* string */
 
   public function __construct(array $data = null) {
     $this->id = $data["id"];
@@ -107,9 +98,7 @@ class User implements ArrayAccess {
     $this->locations = $data["locations"];
     $this->primitives = $data["primitives"];
     $this->math = $data["math"];
-    $this->date = $data["date"];
-    $this->create_timestamp = $data["create_timestamp"];
-    $this->modify_timestamp = $data["modify_timestamp"];
+    $this->nickname = $data["nickname"];
   }
 
   public function offsetExists($offset) {

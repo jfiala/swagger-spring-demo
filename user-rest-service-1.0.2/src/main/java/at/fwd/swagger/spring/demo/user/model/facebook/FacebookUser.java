@@ -2,6 +2,8 @@ package at.fwd.swagger.spring.demo.user.model.facebook;
 
 import java.util.List;
 
+import com.wordnik.swagger.annotations.ApiModelProperty;
+
 import at.fwd.swagger.spring.demo.user.model.Category;
 
 /**
@@ -12,8 +14,10 @@ import at.fwd.swagger.spring.demo.user.model.Category;
  */
 public class FacebookUser {
 
+	@ApiModelProperty(notes="Page ID. No access token is required to access this field")
 	Long id;
 	
+	@ApiModelProperty(notes="Information about the Page")
 	String name;
 	
 	String about;
@@ -23,6 +27,8 @@ public class FacebookUser {
 	String founded;
 
 	List<Category> category_list;
+	
+	private String mission;
 	
 	public Long getId() {
 		return id;
@@ -70,6 +76,14 @@ public class FacebookUser {
 
 	public void setCategory_list(List<Category> category_list) {
 		this.category_list = category_list;
+	}
+
+	public String getMission() {
+		return mission;
+	}
+
+	public void setMission(String mission) {
+		this.mission = mission;
 	}
 	
 	

@@ -2,6 +2,7 @@ package at.fwd.swagger.spring.demo.user.controller.connectors;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -25,7 +26,6 @@ import com.wordnik.swagger.annotations.ApiResponses;
  */
 @RestController
 @Api(value="connector-google-maps", description="Google Maps Connector", position=4)
-@ApiIgnore
 public class ConnectorGoogleMapsController {
 
 	private static final String SUCCESS = "SUCCESS"; 
@@ -38,7 +38,7 @@ public class ConnectorGoogleMapsController {
     @ApiResponses(value = {
     	    @ApiResponse(code = 200, message = SUCCESS, response = User.class),
     	    @ApiResponse(code = 404, message = MESSAGE_NOT_FOUND) })
-	public GoogleMapsResponse findGeocode(String address) {
+	public GoogleMapsResponse findGeocode(@RequestParam String address) {
 		
 		// TODO: make connector asynchronous
 		RestTemplate restTemplate = new RestTemplate();

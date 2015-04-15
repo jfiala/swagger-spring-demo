@@ -34,7 +34,6 @@ class ShowcaseDatatypePrimitives implements ArrayAccess {
       'tiny_number' => 'int',
       'counter' => 'int',
       'id' => 'int',
-      'budget_float' => 'int',
       'budget' => 'double',
       'deleted' => 'boolean',
       'single_character' => 'string'
@@ -45,7 +44,6 @@ class ShowcaseDatatypePrimitives implements ArrayAccess {
       'tiny_number' => 'tinyNumber',
       'counter' => 'counter',
       'id' => 'id',
-      'budget_float' => 'budgetFloat',
       'budget' => 'budget',
       'deleted' => 'deleted',
       'single_character' => 'singleCharacter'
@@ -56,7 +54,6 @@ class ShowcaseDatatypePrimitives implements ArrayAccess {
   public $tiny_number; /* int */
   public $counter; /* int */
   public $id; /* int */
-  public $budget_float; /* int */
   public $budget; /* double */
   public $deleted; /* boolean */
   public $single_character; /* string */
@@ -66,7 +63,6 @@ class ShowcaseDatatypePrimitives implements ArrayAccess {
     $this->tiny_number = $data["tiny_number"];
     $this->counter = $data["counter"];
     $this->id = $data["id"];
-    $this->budget_float = $data["budget_float"];
     $this->budget = $data["budget"];
     $this->deleted = $data["deleted"];
     $this->single_character = $data["single_character"];

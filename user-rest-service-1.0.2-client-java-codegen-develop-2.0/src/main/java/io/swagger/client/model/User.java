@@ -35,6 +35,7 @@ public class User  {
   private ShowcaseDatatypeDate date = null;
   private Date createTimestamp = null;
   private Date modifyTimestamp = null;
+  private String nickname = null;
 
   
   /**
@@ -189,6 +190,19 @@ public class User  {
   }
 
   
+  /**
+   * the nickname
+   **/
+  @ApiModelProperty(value = "the nickname")
+  @JsonProperty("nickname")
+  public String getNickname() {
+    return nickname;
+  }
+  public void setNickname(String nickname) {
+    this.nickname = nickname;
+  }
+
+  
 
   @Override
   public String toString()  {
@@ -207,6 +221,7 @@ public class User  {
     sb.append("  date: ").append(date).append("\n");
     sb.append("  createTimestamp: ").append(createTimestamp).append("\n");
     sb.append("  modifyTimestamp: ").append(modifyTimestamp).append("\n");
+    sb.append("  nickname: ").append(nickname).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

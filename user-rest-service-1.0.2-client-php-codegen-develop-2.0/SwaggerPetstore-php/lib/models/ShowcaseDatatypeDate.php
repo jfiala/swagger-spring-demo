@@ -30,18 +30,22 @@ use \ArrayAccess;
 
 class ShowcaseDatatypeDate implements ArrayAccess {
   static $swaggerTypes = array(
-      'date' => 'DateTime'
+      'date' => 'DateTime',
+      'calendar' => 'int'
   );
 
   static $attributeMap = array(
-      'date' => 'date'
+      'date' => 'date',
+      'calendar' => 'calendar'
   );
 
   
   public $date; /* DateTime */
+  public $calendar; /* int */
 
   public function __construct(array $data = null) {
     $this->date = $data["date"];
+    $this->calendar = $data["calendar"];
   }
 
   public function offsetExists($offset) {

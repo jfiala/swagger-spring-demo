@@ -52,13 +52,19 @@ public class User {
     
     private ShowcaseDatatypeMath math;
     
+    @JsonIgnore
     private ShowcaseDatatypeDate date;
     
     @ApiModelProperty(notes="created")
+    @JsonIgnore
     private Date createTimestamp;
     
     @ApiModelProperty(notes="last modified")
+    @JsonIgnore
     private Date modifyTimestamp;
+    
+    @ApiModelProperty(notes="the nickname")
+    private String nickname;
 
     public User() {
     	categories = new ArrayList<Category>();
@@ -168,6 +174,14 @@ public class User {
 
 	public void setDate(ShowcaseDatatypeDate date) {
 		this.date = date;
+	}
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 
         
