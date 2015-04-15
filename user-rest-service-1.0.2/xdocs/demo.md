@@ -43,11 +43,11 @@ https://github.com/swagger-api/swagger-codegen
 
 Spring-Loaded:
 https://github.com/nithril/spring-loaded-spring-plugin
-# cannot reload Spring beans ...
+-> cannot reload Spring beans ...
 
 JHipster Loaded:
 https://github.com/jhipster/jhipster-loaded
-# can reload spring beans
+-> can reload spring beans
 
 # Demos
 
