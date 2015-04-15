@@ -41,7 +41,7 @@ public class ConnectorUserFacebookController {
 		
 		// TODO: make connector asynchronous
 		RestTemplate restTemplate = new RestTemplate();
-		FacebookUser user = restTemplate.getForObject("http://graph.facebook.com/" + name, FacebookUser.class);
+		FacebookUser user = restTemplate.getForObject("http://graph.facebook.com/" + name + "?metadata=1", FacebookUser.class);
 		return user;
 		 
 	} 
