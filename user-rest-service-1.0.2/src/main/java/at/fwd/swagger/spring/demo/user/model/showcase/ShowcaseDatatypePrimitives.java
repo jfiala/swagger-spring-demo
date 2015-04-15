@@ -1,5 +1,7 @@
 package at.fwd.swagger.spring.demo.user.model.showcase;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 public class ShowcaseDatatypePrimitives {
 
@@ -12,10 +14,12 @@ public class ShowcaseDatatypePrimitives {
 	private long id;
 	
 	// TODO Swagger-Springfox-1.0.2: primitive type float not working yet here
+	@JsonIgnore
 	private float budgetFloat;
 	
 	private double budget;
 	
+	// TODO Swagger-Springfox-1.0.2: Updateing boolean to true doesnt work
 	private boolean deleted;
 	
 	private char singleCharacter;

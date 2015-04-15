@@ -28,7 +28,6 @@ import com.wordnik.swagger.annotations.ApiResponses;
  */
 @RestController
 @Api(value="connector-facebook", position=6, description="Facebook connector")
-@ApiIgnore
 public class ConnectorUserFacebookController {
 
 	private static final String SUCCESS = "SUCCESS"; 
